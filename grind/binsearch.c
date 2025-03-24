@@ -28,7 +28,7 @@ int main() {
   
   int result = binsearch(arr, size, n);
   printf("Index: %d\n", result);
-
+  // print(f"Index : {result}")
   return 0;
 }
 
