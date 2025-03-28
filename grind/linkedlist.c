@@ -27,6 +27,12 @@ node_t *create_new_node(int value) {
   return result;
 }
 
+node_t *insert_at_head(node_t *head, node_t *node_to_insert) {
+  node_to_insert->next = head;
+  return node_to_insert;
+}
+
+
 int main() {
   
   node_t *head = NULL;
