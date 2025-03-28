@@ -40,9 +40,7 @@ int main() {
   
   for (int i = 0; i <= 25; i++) {
     tmp = create_new_node(i);
-    tmp->next = head;
-    head = tmp;
-
+    head = insert_at_head(head, tmp);
   }
 
 
