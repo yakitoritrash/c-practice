@@ -28,7 +28,8 @@ node_t *create_new_node(int value) {
 }
 
 node_t *insert_at_head(node_t *head, node_t *node_to_insert) {
-  node_to_insert->next = head;
+  node_to_insert->next = *head;
+  *head = node_to_insert;
   return node_to_insert;
 }
 
@@ -40,7 +41,7 @@ int main() {
   
   for (int i = 0; i <= 25; i++) {
     tmp = create_new_node(i);
-    head = insert_at_head(head, tmp);
+    insert_at_head(&head, tmp);
   }
 
 
