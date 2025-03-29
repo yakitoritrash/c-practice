@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 
 int partition(int arr[], int lo, int hi) {
@@ -12,6 +13,12 @@ int partition(int arr[], int lo, int hi) {
       arr[idx] = arr[i];
     }
   }
+
+  idx += 1;
+  arr[hi] = arr[idx];
+  arr[idx] = pivot;
+
+  return idx;
 }
 
 void qs(int arr[], int lo, int hi) {
@@ -32,9 +39,9 @@ int main() {
   int arr[] = {5, 4, 2, 6, 5, 7, 8};
   int size = sizeof(arr) / sizeof(arr[0]) - 1;
   
-  quicksort(arr);
+  quicksort(arr, size);
   
   for (int i = 0; i <= size; i++) {
-    printf("%d ,", arr[i]);
+    printf("%d ", arr[i]);
   }
 }
