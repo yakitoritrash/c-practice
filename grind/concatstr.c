@@ -2,8 +2,8 @@
 
 void strconcat(char *str1, char *str2) {
   int idx = 0;
-  while (true) {
-    if (str[idx] == '/0') {
+  while (1) {
+    if (str1[idx] == '\0') {
       break;
     }
 
