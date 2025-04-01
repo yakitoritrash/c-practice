@@ -21,15 +21,15 @@ int partition(int arr[], int lo, int hi) {
 
 void qs(int arr[], int lo, int hi) {
   if (lo >= hi) {
-    return
+    return;
   }
 
-  pivotIdx = partition(arr, lo, hi);
+  int pivotIdx = partition(arr, lo, hi);
   qs(arr, lo, pivotIdx - 1);
   qs(arr, pivotIdx + 1, hi);
 }
 
-void partition(int arr[], int size) {
+void quicksort(int arr[], int size) {
   qs(arr, 0, size - 1);
 }
 
@@ -37,7 +37,7 @@ int main() {
   int arr[] = {3, 4, 1, 5, 4, 3, 8, 9, 2};
   int size = sizeof(arr) / sizeof(arr[0]);
   
-  partiton(arr, size);
+  quicksort(arr, size);
 
   for (int i = 0; i < size; i++) {
     printf("%d ", arr[i]);
