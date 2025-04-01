@@ -12,18 +12,17 @@ int binsearch(int *arr, int n, int size) {
       return m;
     } else if (v > n) {
       hi = m - 1;
-    } else (v < n) {
+    } else {
       lo = m + 1;
     }
   }
 }
 
 int main() {
-  int *arr = {1, 2, 3, 4, 5 ,6, 7};
+  int arr[] = {1, 2, 3, 4, 5 ,6, 7};
   int size = sizeof(arr) / sizeof(arr[0]);
   int n = 2;
-
-  for (int i = 0; i < size; i++) {
-    printf("%d ", arr[i])
-  }
+  
+  int result = binsearch(arr, n, size);
+  printf("%d ", result);
 }
