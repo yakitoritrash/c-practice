@@ -4,7 +4,7 @@ int binsearch(int arr[], int n,  int size) {
   int hi = size - 1;
   int lo = 0;
 
-  for (int i = 0; i <= hi; i++) {
+  for (int i = 0; i < hi; i++) {
     int m = lo + (lo +hi)/2;
     int v = arr[m];
 
