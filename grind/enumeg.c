@@ -18,3 +18,14 @@ typedef enum {
   EXIT_FAILURE = 1,
   EXIT_COMMAND_FOUND = 127,
 } ExitStatus;
+
+switch (loglevel) {
+  case LOG_DEBUG:
+    printf("Debug logging enabled\n");
+    break;
+  case LOG_INFO:
+    printf("Info logging enabled\n");
+    break;
+  case LOG_WARN:
+    printf("Warning logging enabled\n");
+}
