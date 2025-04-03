@@ -1,7 +1,7 @@
 #include <stdio.h> 
 
 typedef enum {
-  BIG = 1234123412341234,
+  BIG = 1,
   BIGGER,
   BIGGEST,
 } BigNumbers;
