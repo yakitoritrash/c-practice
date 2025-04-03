@@ -9,7 +9,7 @@ int partition(int arr[], int lo, int hi) {
       idx++;
       int tmp = arr[i];
       arr[i] = arr[idx];
-      arr[idx] = arr[i];
+      arr[idx] = tmp;
     } 
   }
 
