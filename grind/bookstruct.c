@@ -22,7 +22,8 @@ int main() {
 
   b->title = malloc(20);
   strcpy(b->title, "doawk");
-  b->author = "kinney";
+  b->author = malloc(20);
+  strcpy(b->author, "kinney");
   b->price = 32.32;
   
 
@@ -35,6 +36,7 @@ int main() {
   printf("Price of book b: $%.2f\n", b->price);
 
   free(b->title);
+  free(b->author);
   free(b);
 
   return 0;
