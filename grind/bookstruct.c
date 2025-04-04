@@ -17,7 +17,7 @@ void create_book(Book *obj, const char *name, const char *title, const char*auth
 
   printf("Title of book %s: %s\n", name, title);
   printf("Author of book %s: %s\n", name, author);
-  printf("Price of book %s: %.2f\n", name, price);
+  printf("Price of book %s: $%.2f\n", name, price);
 }
 int main() {
   Book a; 
@@ -48,7 +48,15 @@ int main() {
   
   Book *c = malloc(sizeof(Book));
   create_book(c, "c", "kots", "murakami", 69.69); 
+  
+  Book *d = malloc(sizeof(Book));
+  create_book(d, "d", "cmbyn", "aciman", 69.69); 
 
+  Book *e = malloc(sizeof(Book));
+  create_book(e, "e", "tpodg", "wilde", 69.69); 
+
+  Book *f = malloc(sizeof(Book));
+  create_book(f, "f", "cap", "dostoevsky", 69.69); 
   free(b->title);
   free(b->author);
   free(b);
