@@ -8,6 +8,17 @@ typedef struct {
   float price;
 } Book;
 
+void create_book(Book *obj, const char *name, const char *title, const char*author, float price) {
+  obj->title = malloc(strlen(title) + 1);
+  strcpy(obj->title, title);
+  obj->author = malloc(strlen(author) + 1);
+  strcpy(obj->author, author);
+  obj->price = price;
+
+  printf("Title of book %s: %s\n", name, title);
+  printf("Author of book %s: %s\n", name, author);
+  printf("Price of book %s: %.2f\n", name, price);
+}
 int main() {
   Book a; 
   a.title = "lotr";
@@ -20,20 +31,13 @@ int main() {
     return 1;
   }
 
-  Book *create_book(const obj, const char *title, const char*author, float price) {
-    obj->title = malloc(20);
-    strcpy(obj->title, title);
-    obj->author = malloc(20);
-    strcpy(obj->author, author);
-    obj->price = price;
-  }
-
   b->title = malloc(20);
   strcpy(b->title, "doawk");
   b->author = malloc(20);
   strcpy(b->author, "kinney");
   b->price = 32.32;
   
+
   printf("Title of book a: %s\n", a.title);
   printf("Author f book a: %s\n", a.author);
   printf("Price of book a: $%.2f\n", a.price);
@@ -42,12 +46,14 @@ int main() {
   printf("Author of book b: %s\n", b->author);
   printf("Price of book b: $%.2f\n", b->price);
   
-  create_book(c, "kots", "murakami", 69.69); 
+  Book *c = malloc(sizeof(Book));
+  create_book(c, "c", "kots", "murakami", 69.69); 
 
   free(b->title);
   free(b->author);
   free(b);
-  free(create_book);
-
+  free(c->title);
+  free(c->author);
+  free(c);
   return 0;
 }
