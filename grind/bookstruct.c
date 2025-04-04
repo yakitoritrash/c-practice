@@ -63,5 +63,14 @@ int main() {
   free(c->title);
   free(c->author);
   free(c);
+  free(d->title);
+  free(d->author);
+  free(d);
+  free(e->title);
+  free(e->author);
+  free(e);
+  free(f->title);
+  free(f->author);
+  free(f);
   return 0;
 }
