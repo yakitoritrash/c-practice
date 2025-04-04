@@ -41,7 +41,7 @@ int main() {
     printf("%d ", arr[i]);
   }
   
-  print("\n");
+  printf("\n");
 
   quicksort(arr, size);
 
