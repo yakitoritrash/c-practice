@@ -32,4 +32,16 @@ int main() {
   node_t *head = NULL;
 
   head = insert_at_head(head, 5);
+  head = insert_at_head(head, 10);
+  head = insert_at_head(head, 15);
+
+  node_t *temp = head;
+  while (temp != NULL) {
+    printf("%d -> ", temp->data);
+    temp = temp->next;
+  }
+
+  printf("NULL\n");
+
+  return 0;
 }
