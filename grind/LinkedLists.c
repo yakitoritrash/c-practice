@@ -18,5 +18,3 @@ node_t *create_node(int value) {
   new_node->next = NULL;
   return new_node;
 }
-
-
