@@ -36,10 +36,10 @@ void quicksort(int arr[], int size) {
 
 int main() {
   int arr[] = {5, 4, 43, 12, 76, 65, 90, 101, 1};
-  int size = sizeof(arr) / sizeof(arr[]);
+  int size = sizeof(arr) / sizeof(arr[0]);
   
   for (int i = 0; i < size; i++) {
-    printf("%d ");
+    printf("%d ", arr[i]);
   }
 
   printf("\n");
@@ -48,7 +48,7 @@ int main() {
 
 
   for (int i = 0; i < size; i++) {
-    printf("%d ");
+    printf("%d ", arr[i]);
   }
 
 }
