@@ -22,7 +22,22 @@ node_t *create_node(int value) {
 node_t *insert_at_head(node_t *head, int value) {
   *new_node = create_node(value);
   if (new_node == NULL) {
-    printf("ERROR\n");
+    return head;
   }
 
+  new_node->next = head;
+  return new_node;
+}
+
+int main() {
+  node_t *head = NULL;
+  head = insert_at_head(head, 5);
+  head = insert_at_head(head, 10);
+  head = insert_at_head(head, 15);
+
+  node_t *tmp = head;
+  while (tmp != NULL) {
+    printf("%d -> ", tmp -> data);
+    tmp = tmp->next;
+  }
 }
