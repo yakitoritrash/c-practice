@@ -18,7 +18,7 @@ int binsearch(int arr[], int n, int size) {
   }
 }
 
-int main() {]
+int main() {
   int arr[] = {3, 4, 5, 6, 7, 89, 111};
   int n = 89;
   int size= sizeof(arr) / sizeof(arr[0]);
