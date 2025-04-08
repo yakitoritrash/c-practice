@@ -13,6 +13,19 @@ void bubblesort(int arr[], int size) {
 }
 
 int main() {
+  int arr[] = {43, 12, 54, 65, 78, 11, 23, 110, 78, 111};
+  int size = sizeof(arr) / sizeof(arr[0]);
 
+  for (int i = 0; i < size; i++) {
+    printf("%d ", arr[i]);
+  }
+
+  printf("\n");
+
+  bubblesort(arr, size);
+
+  for (int i = 0; i < size; i++) {
+    printf("%d ", arr[i]);
+  }
 }
 
