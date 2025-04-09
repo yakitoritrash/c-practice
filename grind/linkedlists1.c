@@ -50,25 +50,23 @@ node_t *insert_at_end(node_t *head, int value) {
 
 node_t *insert_at_position(node_t *head, int value, int position) {
   node_t *new_node = create_node(value);
-  if (new_node = NULL) {
-    return head;
-  }
 
-  if (head == NULL) {
-    return new_node;
+  if (position == 0) {
+    return insert_at_head(head, value);
   }
 
   node_t *tmp = head;
   for (int i = 0; i < position; i++) {
-    while(tmp != NULL) {
-      tmp = tmp -> next;
-    }
+    if (tmp == NULL) {
+      return head;
+    }  
+    tmp = tmp -> next;
+  }
+
     new_node -> next = tmp -> next;
     tmp -> next = new_node;
 
     return head;
-
-  }
 }
 int main() {
   node_t *head = NULL;
