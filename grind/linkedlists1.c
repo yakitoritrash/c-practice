@@ -63,6 +63,10 @@ node_t *insert_at_position(node_t *head, int value, int position) {
     while(tmp != NULL) {
       tmp = tmp -> next;
     }
+    new_node -> next = tmp -> next;
+    tmp -> next = new_node;
+
+    return head;
 
   }
 }
@@ -73,6 +77,7 @@ int main() {
   head = insert_at_head(head, 15);
   
   head = insert_at_end(head, 2);   
+  head = insert_at_position(head, 3, 1);   
   node_t *tmp = head;
   while (tmp != NULL) {
     printf("%d -> ", tmp -> data);
