@@ -31,9 +31,21 @@ node_t *insert_at_head(node_t *head, int value) {
 
 node_t *insert_at_end(node_t *head, int value) {
   node_t *new_node = create_node(value);
-
-
+  if (new_node == NULL) {
+    return head;
+  }
   
+  if (head == NULL) {
+    return new_node;
+  }
+  
+  node_t *temp = head;
+  while (temp->next != NULL) {
+    temp = temp->next;
+  }
+
+  temp->next = new_node;
+  return head;
 }
 
 int main() {
@@ -41,7 +53,8 @@ int main() {
   head = insert_at_head(head, 5);
   head = insert_at_head(head, 10);
   head = insert_at_head(head, 15);
-
+  
+  head = insert_at_end(head, 2);   
   node_t *tmp = head;
   while (tmp != NULL) {
     printf("%d -> ", tmp -> data);
