@@ -23,6 +23,17 @@ node_t *insert_at_head(node_t *head, int value) {
     return head;
   }
 
-  
-  
+  new_node->next = head;
+  return new_node;
+}
+
+node_t *insert_at_end(node_t *head, int value) {
+  node_t *new_node = create_node(value);
+  if (new_node == NULL) {
+    return head;
+  }
+  if (head == NULL) {
+    return new_node;
+  }
+
 }
