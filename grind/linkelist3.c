@@ -10,6 +10,7 @@ node_t *create_node(int value) {
   node_t *new_node = malloc(sizeof(node_t));
   if (!new_node) {
     printf("Memory allocation failed.\n");
+    return NULL;
   }
 
   new_node->data = value;
@@ -24,7 +25,7 @@ node_t *insert_at_head(node_t *head, int value) {
   }
   
   new_node->next = head;
-  return head;
+  return new_node;
 }
 
 node_t *insert_at_end(node_t *head, int value) {
@@ -68,7 +69,15 @@ int main() {
   head = insert_at_head(head, 5);
   head = insert_at_head(head, 10);
   head = insert_at_head(head, 15);
-  head = insert_at_end(head, 5);
+  head = insert_at_end(head, 3);
 
-  head = insert_at_position(head, 5, 2);
+  head = insert_at_position(head, 5, 1);
+
+  node_t *tmp = head;
+  while(tmp != NULL) {
+    printf("%d -> ", tmp->data);
+    tmp = tmp->next;
+  }
+
+  printf("NULL");
 }
