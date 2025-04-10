@@ -37,7 +37,7 @@ node_t *insert_at_end(node_t *head, int value) {
   }
   
   node_t *tmp = head;
-  while (tmp != NULL) {
+  while (tmp->next != NULL) {
     tmp = tmp->next;
   }
 
@@ -47,9 +47,12 @@ node_t *insert_at_end(node_t *head, int value) {
 
 node_t *insert_at_position(node_t *head, int value, int position) {
   node_t *new_node = create_node(value);
+  if (position == 0) {
+    return insert_at_head(head, value);
+  }
   node_t *tmp = head;
   for (int i = 0; i < position; i++) {
-    if (tmp-> next == NULL) {
+    if (tmp == NULL) {
       return head;
     }
     tmp = tmp->next;
@@ -62,8 +65,17 @@ node_t *insert_at_position(node_t *head, int value, int position) {
 int main() {
   node_t *head = NULL;
   head = insert_at_head(head, 3);
-  head = insert_at_head(head, 3);
-  head = insert_at_head(head, 3);
-  head = insert_at_head(head, 3);
+  head = insert_at_head(head, 6);
+  head = insert_at_end(head, 14);
+  head = insert_at_head(head, 9);
+  
+  head = insert_at_position(head, 12, 1);
 
+  node_t *tmp = head;
+  while (tmp != NULL) {
+    printf("%d -> ", tmp->data);
+    tmp = tmp->next;
+  }
+
+  printf("NULL\n");
 }
