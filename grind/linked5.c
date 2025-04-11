@@ -101,6 +101,7 @@ int main() {
   head = insert_at_end(head, 9);
   head = insert_at_position(head, 20, 1);
   head = delete_at_position(head, 2);
+
   node_t *tmp = head;
   while (tmp != NULL) {
     printf("%d -> ", tmp->data);
