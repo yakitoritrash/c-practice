@@ -56,6 +56,7 @@ node_t *insert_at_position(node_t *head, int value, int position) {
   }
   new_node->next = tmp->next;
   tmp->next = new_node;
+  return head;
 }
 
 node_t *delete_a_position(node_t *head, int position) {
@@ -70,7 +71,7 @@ node_t *delete_a_position(node_t *head, int position) {
   }
 
   node_t *tmp = head;
-  for (int i = 0; i < position; i++) {
+  for (int i = 0; i < position - 1; i++) {
     if (tmp == NULL || tmp->next == NULL) {
       printf("Out of bounds.\n");
       return head;
@@ -95,7 +96,7 @@ int main() {
   head = insert_at_head(head, 3);
   head = insert_at_head(head, 2);
   head = insert_at_position(head, 20, 2);
-  //head = delete_a_position(head, 3);
+  head = delete_a_position(head, 3);
   
   node_t *tmp = head;
   while (tmp!=NULL) {
