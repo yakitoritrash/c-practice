@@ -77,7 +77,12 @@ node_t *delete_a_position(node *head, int position) {
     }
     tmp = tmp->next;
   }
-  node_t *to_be_deleted = tmp->next; 
+  node_t *to_be_deleted = tmp->next;
+  if (to_be_deleted == NULL) {
+    printf("Nothing to delete here.\n");
+    return head;
+  }
+
 
 }
 
