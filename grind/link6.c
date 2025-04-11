@@ -93,10 +93,25 @@ node_t *delete_by_value(node_t *head, int value) {
   if (head == NULL) {
     return NULL;
   }
-  node_t *tmp = head;
-  while (tmp != NULL) {
-
+  if (head->data == value) {
+    node_t *to_be_deleted = head;
+    head = head->next;
+    free(to_be_deleted);
+    return head;
   }
+  node_t *tmp = head;
+  while (tmp != NULL && tmp->next->data != value) {
+    tmp = tmp->next;
+  }
+  
+  if (tmp->next == NULL) {
+    printf("Value not found\n");
+    return head;
+  }
+  node_t *to_be_deleted = tmp->next;
+  tmp->next = to_be_deleted->next;
+  free(to_be_deleted);
+  return head;
 }
 
 int main() {
@@ -107,6 +122,7 @@ int main() {
   head = insert_at_head(head, 2);
   head = insert_at_position(head, 20, 2);
   head = delete_a_position(head, 3);
+  head = delete_by_value(head, 3);
   
   node_t *tmp = head;
   while (tmp!=NULL) {
