@@ -102,5 +102,7 @@ int main() {
     printf("%d -> ", tmp->data);
     tmp = tmp -> next;
   }
+
+  printf("NULL\n");
 }
 
