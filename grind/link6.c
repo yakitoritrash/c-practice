@@ -114,6 +114,10 @@ node_t *delete_by_value(node_t *head, int value) {
   return head;
 }
 
+node_t reverse_list(node_t *head) {
+
+}
+
 int main() {
   node_t *head = NULL;
   head = insert_at_head(head, 4);
