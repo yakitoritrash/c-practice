@@ -43,11 +43,29 @@ node_t *insert_at_end(node_t *head, int value) {
   return head;
 }
 
+node_t *insert_at_position(node_t *head, int value, int position) {
+  node_t *new_node = create_node(value);
+  if (position == 0) {
+    return insert_at_head(head, value);
+  }
+  node_t *tmp = head;
+  for (int i = 0; i < position - 1; i++) {
+    if (tmp == NULL) {
+      return head;
+    }
+    tmp = tmp->next;
+  }
+  new_node->next = tmp->next;
+  tmp->next = new_node;
+  return head;
+}
+
 int main() {
   node_t *head = NULL;
   head = insert_at_head(head, 5);
   head = insert_at_end(head, 3);
   head = insert_at_head(head, 2);
+  head = insert_at_position(head, 6, 2);
 
   node_t *tmp = head;
   while(tmp != NULL) {
