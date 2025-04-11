@@ -77,7 +77,7 @@ node_t *delete_a_position(node *head, int position) {
     }
     tmp = tmp->next;
   }
-
+  node_t *to_be_deleted = tmp->next; 
 
 }
 
