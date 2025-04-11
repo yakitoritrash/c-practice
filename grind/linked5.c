@@ -9,7 +9,7 @@ typedef struct node_t {
 node_t *create_node(int value) {
   node_t *new_node = malloc(sizeof(node_t));
   if (!new_node) {
-    printf("Memory allocation failed."\n);
+    printf("Memory allocation failed.\n");
     return NULL;
   }
 
@@ -50,7 +50,7 @@ node_t *insert_at_position(node_t *head, int value, int position) {
   }
   node_t *tmp = head;
   for (int i = 0; i < position; i++) {
-    if (tmp != NULL) {
+    if (tmp == NULL) {
       return head;
     }
     tmp = tmp -> next;
@@ -62,7 +62,9 @@ node_t *insert_at_position(node_t *head, int value, int position) {
 }
 
 int main() {
+
   node_t *head = NULL;
+
   head = insert_at_head(head, 3);
   head = insert_at_head(head, 4);
   head = insert_at_head(head, 6);
