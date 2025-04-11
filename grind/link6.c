@@ -42,7 +42,7 @@ node_t *insert_at_end(node_t *head, int value) {
   return head;
 }
 
-node_t *insert_at_end(node_t *head, int value, int position) {
+node_t *insert_at_position(node_t *head, int value, int position) {
   node_t *new_node = create_node(value);
   if (position == 0) {
     return insert_at_head(head, value);
@@ -82,7 +82,25 @@ node_t *delete_a_position(node *head, int position) {
     printf("Nothing to delete here.\n");
     return head;
   }
+  
+  tmp->next = to_be_deleted->next;
+  free(to_be_deleted);
+  return head;
+}
 
-
+int main() {
+  node_t *head = NULL;
+  head = insert_at_head(head, 4);
+  head = insert_at_end(head, 30);
+  head = insert_at_head(head, 3);
+  head = insert_at_head(head, 2);
+  head = insert_at_position(head, 20, 2);
+  //head = delete_a_position(head, 3);
+  
+  node_t *tmp = head;
+  while (tmp!=NULL) {
+    printf("%d -> ", tmp->data);
+    tmp = tmp -> next;
+  }
 }
 
