@@ -89,6 +89,16 @@ node_t *delete_a_position(node_t *head, int position) {
   return head;
 }
 
+node_t *delete_by_value(node_t *head, int value) {
+  if (head == NULL) {
+    return NULL;
+  }
+  node_t *tmp = head;
+  while (tmp != NULL) {
+
+  }
+}
+
 int main() {
   node_t *head = NULL;
   head = insert_at_head(head, 4);
