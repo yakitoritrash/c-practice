@@ -77,3 +77,17 @@ node_t *delete_a_position(node_t *head, int position) {
   free(to_be_deleted);
   return head;
 }
+
+node_t *delete_by_value(node_t *head, int value) {
+  if (head == NULL) {
+    return NULL;
+  }
+  if (head->data == value) {
+    node_t *to_be_deleted = head;
+    head = head->next;
+    free(to_be_deleted);
+    return head;
+  }
+
+
+}
