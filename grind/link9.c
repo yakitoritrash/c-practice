@@ -42,4 +42,9 @@ node_t *insert_at_end(node_t *head, int value) {
   return head;
 }
 
-node_t 
+node_t *insert_at_position(node_t *head, int value, int position) {
+  if (position == 0) {
+    return insert_at_head(head, value);
+  }
+
+}
