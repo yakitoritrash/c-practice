@@ -59,5 +59,21 @@ node_t *insert_at_position(node_t *head, int value, int position) {
 }
 
 node_t *delete_a_position(node_t *head, int position) {
-
+  if (position == 0) {
+    node_t *to_be_deleted = head;
+    head = head->next;
+    free(to_be_deleted);
+    return head;
+  }
+  node_t *tmp = head;
+  for (int i = 0; i < position - 1; i++) {
+    if (tmp->next == NULL || tmp == NULL) {
+      printf("Nothing to delete");
+    }
+    tmp = tmp->next;
+  }
+  node_t *to_be_deleted = tmp->next;
+  tmp->next = to_be_deleted->next;
+  free(to_be_deleted);
+  return head;
 }
