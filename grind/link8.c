@@ -59,5 +59,19 @@ node_t *insert_at_position(node_t *head, int value, int position) {
   return head;
 }
 
+int main() {
+  node_t *head = NULL;
+  head = insert_at_head(head, 5);
+  head = insert_at_head(head, 10);
+  head = insert_at_end(head, 15);
+  head = insert_at_position(head, 2, 1);
+
+  node_t *tmp = head;
+  while(tmp == NULL) {
+    printf("%d -> ", tmp->data);
+    tmp = tmp->next;
+  }
+  printf("NULL\n");
+}
 
 
