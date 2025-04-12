@@ -88,6 +88,7 @@ node_t *delete_by_value(node_t *head, int value) {
     free(to_be_deleted);
     return head;
   }
+  node_t *tmp = head;
 
 
 }
