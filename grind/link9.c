@@ -46,5 +46,14 @@ node_t *insert_at_position(node_t *head, int value, int position) {
   if (position == 0) {
     return insert_at_head(head, value);
   }
-
+  node_t *tmp = head;
+  for (int i = 0; i < position; i++) {
+    if (tmp == NULL) {
+      return head;
+    }
+    tmp = tmo->next;
+  }
+  new_node->next = tmp->next ;
+  tmp->next = new_node;
+  return head;
 }
