@@ -7,8 +7,28 @@ int partition(int arr[], int lo, int hi) {
   for (int i = lo; i <= hi; i++) {
     if (arr[i] < pivot) {
       idx++;
-      int tmp = `:w
-
+      int tmp = arr[i];
+      arr[i] = arr[idx];
+      arr[idx] = tmp;
     }
   }
+
+  idx++;
+  arr[hi] = arr[idx];
+  arr[idx] = pivot;
+  return idx;
 }
+
+void qs(int arr[], int lo, int hi) {
+  if (lo >= hi) {
+    return;
+  }
+  int pivotIdx = partition(arr, lo, hi);
+  qs(arr, lo, pivotIdx - 1);
+  qs(arr, pivotIdx + 1; hi);
+}
+
+void quicksort(int arr[], int size) {
+
+}
+
