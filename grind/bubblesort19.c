@@ -1,8 +1,8 @@
 #include <stdio.h>
 
 void bubblesort(int arr[], int size) {
-  for (int i = 0; i <= size - 1; i++) {
-    for (int j = 0; j < size - 1 -j; j++) {
+  for (int i = 0; i < size; i++) {
+    for (int j = 0; j < size - 1 - i; j++) {
       if (arr[j] > arr[j + 1]) {
         int tmp = arr[j];
         arr[j] = arr[j + 1];
@@ -13,7 +13,7 @@ void bubblesort(int arr[], int size) {
 }
 
 int main() {
-  int arr[] = {3, 1, 56, 234, 7, 8, 13, 6, 78, 34524, 123123, 45};
+  int arr[] = {3, 1, 56, 234, 7, 8, 13, 6, 78, 344, 123, 45};
   int size = sizeof(arr) / sizeof(arr[0]);
   for (int i = 0; i < size; i++) {
     printf("%d ", arr[i]);
