@@ -25,7 +25,7 @@ void qs(int arr[], int lo, int hi) {
   }
   int pivotIdx = partition(arr, lo, hi);
   qs(arr, lo, pivotIdx - 1);
-  qs(arr, pivotIdx + 1; hi);
+  qs(arr, pivotIdx + 1, hi);
 }
 
 void quicksort(int arr[], int size) {
