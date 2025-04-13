@@ -23,5 +23,6 @@ int main() {
   int n = 8;
   int size = sizeof(arr) / sizeof(arr[0]);
 
-
+  int result = binsearch(arr, size, n);
+  printf("%d", result);
 }
