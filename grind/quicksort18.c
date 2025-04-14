@@ -25,5 +25,25 @@ int qs(int arr[], int lo, int hi) {
 
   int pivotIdx = partition(arr, lo, hi);
   qs(arr, lo, pivotIdx - 1);
-  qs(arr, lo, pivotIdx - 1);
+  qs(arr, pivotIdx - 1, hi);
+}
+
+int quicksort(int arr[], int size) {
+  qs(arr, 0, size - 1);
+}
+
+int main() {
+  int arr[] = {5, 23, 123, 56, 567, 34, 4, 234, 98, 123, 98 , 676, 989, 32423};
+  int size = sizeof(arr) / sizeof(arr[0]);
+  
+  for (int i = 0; i < size; i++) {
+    printf("%d ", arr[i]);
+  }
+  printf("\n");
+
+  quicksort(arr, size);
+
+  for (int i = 0; i < size; i++) {
+    printf("%d ", arr[i]);
+  }
 }
