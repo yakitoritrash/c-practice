@@ -18,7 +18,7 @@ int partition(int arr[], int lo, int hi) {
   return idx;
 }
 
-int qs(int arr[], int lo, int hi) {
+void qs(int arr[], int lo, int hi) {
   if (lo >= hi) {
     return;
   }
@@ -28,7 +28,7 @@ int qs(int arr[], int lo, int hi) {
   qs(arr, pivotIdx - 1, hi);
 }
 
-int quicksort(int arr[], int size) {
+void quicksort(int arr[], int size) {
   qs(arr, 0, size - 1);
 }
 
