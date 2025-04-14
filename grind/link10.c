@@ -7,5 +7,18 @@ typedef struct node_t {
 } node_t;
 
 node_t *create_node(int value) {
+  node_t *new_node = malloc(sizeof(node_t));
+  if (!new_node) {
+    printf("Memory allocation failed.");
+  }
 
+  new_node->data = value;
+  new_node->next = NULL;
+}
+
+node_t *insert_at_head(node_t *head, int value) {
+  node_t *new_node = create_node(value);
+  if (new_node == NULL) {
+    return head;
+  }
 }
