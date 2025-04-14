@@ -4,7 +4,7 @@ int partition(int arr[], int lo, int hi) {
   int pivot = arr[hi];
   int idx = lo - 1;
 
-  for (int i = 0; i <= hi; i++) {
+  for (int i = lo; i <= hi; i++) {
     if (arr[i] < pivot) {
       idx++;
       int tmp = arr[i];
@@ -25,7 +25,7 @@ void qs(int arr[], int lo, int hi) {
 
   int pivotIdx = partition(arr, lo, hi);
   qs(arr, lo, pivotIdx - 1);
-  qs(arr, pivotIdx - 1, hi);
+  qs(arr, pivotIdx + 1, hi);
 }
 
 void quicksort(int arr[], int size) {
