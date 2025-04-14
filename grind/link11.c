@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 typedef struct node_t {
-  int value;
+  int data;
   struct node_t *next;
 } node_t;
 
@@ -43,6 +43,8 @@ node_t *insert_at_end(node_t *head, int value) {
 }
 
 node_t *insert_at_position(node_t *head, int value, int position) {
+
+  node_t *new_node = create_node(value);
   if (head == NULL) {
     return NULL;
   }
@@ -66,7 +68,7 @@ node_t *delete_a_position(node_t *head, int position) {
     return NULL;
   }
   if (position == 0) {
-    node *to_be_deleted = head;
+    node_t *to_be_deleted = head;
     head = head->next;
     free(to_be_deleted);
     return head;
@@ -118,10 +120,12 @@ int main() {
   head = insert_at_end(head, 8);
   head = insert_at_head(head, 4);
   head = insert_at_position(head, 1, 2);
-
+  
+  head = delete_a_position(head, 2);
+  head = delete_by_value(head, 1);
   node_t *tmp = head;
   while(tmp != NULL) {
-    printf("%d ->", tmp->data);
+    printf("%d -> ", tmp->data);
     tmp = tmp->next;
   }
 
