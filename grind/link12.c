@@ -121,6 +121,7 @@ int main() {
   head = insert_at_position(head, 1, 1);
   
   head = delete_a_position(head, 1);
+  head = delete_by_value(head, 2);
   node_t *tmp = head;
   while(tmp != NULL) {
     printf("%d -> ", tmp->data);
