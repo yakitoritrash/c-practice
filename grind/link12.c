@@ -10,6 +10,7 @@ node_t *create_node(int value) {
   node_t *new_node = malloc(sizeof(node_t));
   if (!new_node) {
     printf("Memory allocation failed.\n");
+    return NULL;
   }
   new_node->data = value;
   new_node->next = NULL;
@@ -59,7 +60,7 @@ node_t *insert_at_position(node_t *head, int value, int position) {
     }
     tmp = tmp->next;
   }
-  tmp->next = new_node->next;
+  new_node->next = tmp->next;
   tmp->next = new_node;
   return head;
 }
