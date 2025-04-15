@@ -86,4 +86,29 @@ node_t *delete_a_position(node_t *head, int position) {
   return head;
 }
 
-node_t *delete_by_value(node_t *head, int position
+node_t *delete_by_value(node_t *head, int value) {
+  if (head == NULL) {
+    return NULL;
+  }
+  if (head->data == value) {
+    node_t *to_be_deleted = head;
+    head = head->next;
+    free(to_be_deleted);
+    return head;
+  }
+  node_t *tmp = head;
+  while (tmp->next != NULL && tmp->next->data != value) {
+    tmp = tmp->next;
+  }
+  if (tmp->next == NULL) {
+    printf("Nothing to delete here.\n");
+  }
+  node_t *to_be_deleted = tmp->next;
+  tmp->next = to_be_deleted->next;
+  free(to_be_deleted);
+  return head;
+}
+
+int main() {
+
+}
