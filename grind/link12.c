@@ -110,5 +110,18 @@ node_t *delete_by_value(node_t *head, int value) {
 }
 
 int main() {
+  node_t *head = NULL;
+  head = insert_at_head(head, 2);
+  head = insert_at_head(head, 3);
+  head = insert_at_end(head, 8);
+  head = insert_at_head(head, 5);
+  head = insert_at_positon(head, 1, 1);
 
+  node_t *tmp = head;
+  while(tmp != NULL) {
+    printf("%d -> ", tmp->data);
+    tmp = tmp->next;
+  }
+
+  printf("NULL\n");
 }
