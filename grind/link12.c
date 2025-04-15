@@ -104,6 +104,7 @@ node_t *delete_by_value(node_t *head, int value) {
   }
   if (tmp->next == NULL) {
     printf("Nothing to delete here.\n");
+    return head;
   }
   node_t *to_be_deleted = tmp->next;
   tmp->next = to_be_deleted->next;
@@ -118,7 +119,8 @@ int main() {
   head = insert_at_end(head, 8);
   head = insert_at_head(head, 5);
   head = insert_at_position(head, 1, 1);
-
+  
+  head = delete_a_position(head, 1);
   node_t *tmp = head;
   while(tmp != NULL) {
     printf("%d -> ", tmp->data);
