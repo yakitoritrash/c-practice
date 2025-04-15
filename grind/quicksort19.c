@@ -35,5 +35,14 @@ void quicksort(int arr[], int size) {
 int main() {
   int arr[] = {432, 156, 123, 565, 23, 4, 6, 243, 98, 1223, 8989};
   int size = sizeof(arr) / sizeof(arr[0]);
+  
+  for (int i = 0; i < size; i++) {
+    printf("%d ", arr[i]);
+  }
 
+  printf("\n");
+  quicksort(arr, size);
+  for (int i = 0; i < size; i++) {
+    printf("%d ", arr[i]);
+  }
 }
