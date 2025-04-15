@@ -11,7 +11,7 @@ node_t *create_node(int value) {
   node_t *new_node = malloc(sizeof(node_t));
   if (!new_node) {
     printf("Memory allocation failed.\n");
-    return NULL;
+    return NULL;Write code to define a doubly linked list node (struct
   }
   new_node->data = value;
   new_node->next = NULL;
@@ -24,5 +24,24 @@ node_t *insert_at_head(node_t *head, int value) {
   if (new_node == NULL) {
     return head;
   }
+  new_node->next = head;
+  new_node->prev = NULL;
+
+  if (head != NULL) {
+    head->prev = new_node;
+  }
+  return new_node;
+}
+
+node_t *insert_at_end(node_t *head, int value) {
+  node_t *new_node = create_node(value);
+  if (new_node == NULL) {
+    return head;
+  }
+  if (head == NULL) {
+    return new_node;
+  }
+  
+
 
 }
