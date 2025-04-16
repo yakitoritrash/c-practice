@@ -52,4 +52,24 @@ node_t *insert_at_end(node_t *head, int value) {
   return head;
 }
 
-
+node_t *insert_a_position(node_t *head, int value, int position) {
+  node_t *new_node = create_node(value);
+  if (head == NULL) {
+    return new_node:
+  }
+  if (position == 0) {
+    return insert_at_head(head, value);
+  }
+  node_t *tmp = head;
+  for (int i = 0; i < position - 1; i++) {
+    if (tmp == NULL || tmp->next == NULL) {
+      printf("Out of bounds\n");
+    }
+    tmp = tmp->next;
+  }
+  new_node->next = tmp->next;
+  tmp->next->prev = new_node;
+  new_node->prev = tmp;
+  tmp->next = new_node;
+  return head;
+}
