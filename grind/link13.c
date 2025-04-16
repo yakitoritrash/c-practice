@@ -140,14 +140,29 @@ node_t *delete_by_value(node_t *head, int value) {
 void print_forward(node_t *head) {
   node_t *tmp = head;
   while (tmp != NULL) {
-    printf("%d <-> ", tmp->data;
+    printf("%d <-> ", tmp->data);
     tmp = tmp->next;
+  }
+  printf("NULL\n");
+}
+
+void print_backward(node_t *tail) {
+  node_t *tmp = head;
+  while (tmp->next != NULL) {
+    tmp = tmp->next;
+  }
+  node_t *tail = tmp;
+  node_t *tmp = tail;
+  while (tmp == NULL) {
+    printf("d <-> ", tmp->data);
+    tmp = tmp->prev;
   }
   printf("NULL\n");
 }
 
 int main() {
   node_t *head = NULL;
+  node_t *tail = NULL
   head = insert_at_head(head, 2);
   head = insert_at_head(head, 3);
   head = insert_at_head(head, 4);
@@ -157,4 +172,6 @@ int main() {
   head = delete_a_position(head, 2);
   head = delete_by_value(head, 5);
   print_forward(head);
+  print("\n");
+  print_backward(tail);
 }
