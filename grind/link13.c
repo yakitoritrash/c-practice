@@ -42,6 +42,14 @@ node_t *insert_at_end(node_t *head, int value) {
   if (head == NULL) {
     return new_node;
   }
-
+  
+  node_t *tmp = head;
+  while (tmp->next != NULL) {
+    tmp = tmp->next;
+  }
+  tmp->next = new_node;
+  new_node->prev = tmp;
+  return head;
 }
+
 
