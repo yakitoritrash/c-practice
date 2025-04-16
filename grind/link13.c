@@ -123,5 +123,15 @@ node_t *delete_by_value(node_t *head, int value) {
     return head;
   }
   node_t *tmp = head;
-
+  while (tmp->next != NULL && tmp->next->data != value) {
+    tmp=tmp->next;
+  }
+  if (tmp->next == NULL) {
+    printf("Nothing to delete here.\n");
+  }
+  node_t *to_be_deleted = tmp->next;
+  tmp->next = to_be_deleted->next;
+  if (to_be_deleted->next != NULL) {
+    to_be_deleted->next->prev = tmp;
+  }
 }
