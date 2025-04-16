@@ -88,4 +88,40 @@ node_t *delete_a_position(node_t *head, int position) {
     free(to_be_deleted);
     return head;
   }
+
+  node_t *tmp = head;
+  for (int i = 0; i < position - 1; i++){
+    if (tmp == NULL || tmp->next == NULL) {
+      printf("out of bounds\n");
+      return head;
+    }
+    tmp = tmp->next;
+  }
+  node_t *to_be_deleted = tmp->next;
+  if (to_be_deleted == NULL) {
+    printf("position out of bounds.\n");
+    return head;
+  }
+  tmp->next = to_be_deleted->next;
+
+  if (to_be_deleted->next != NULL) {
+    to_be_deleted->next->prev = tmp;
+  }
+
+  free(to_be_deleted);
+  return head;
+}
+
+node_t *delete_by_value(node_t *head, int value) {
+  if (head == NULL) {
+    return NULL;
+  }
+  if (head->data == value) {
+    node_t *to_be_deleted = head;
+    head = head->next;
+    free(to_be_deleted);
+    return head;
+  }
+  node_t *tmp = head;
+
 }
