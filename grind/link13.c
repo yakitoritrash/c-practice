@@ -146,19 +146,6 @@ void print_forward(node_t *head) {
   printf("NULL\n");
 }
 
-void print_backward(node_t *tail) {
-  node_t *tmp = head;
-  while (tmp->next != NULL) {
-    tmp = tmp->next;
-  }
-  node_t *tail = tmp;
-  node_t *tmp = tail;
-  while (tmp == NULL) {
-    printf("d <-> ", tmp->data);
-    tmp = tmp->prev;
-  }
-  printf("NULL\n");
-}
 
 int main() {
   node_t *head = NULL;
@@ -173,5 +160,4 @@ int main() {
   head = delete_by_value(head, 5);
   print_forward(head);
   print("\n");
-  print_backward(tail);
 }
