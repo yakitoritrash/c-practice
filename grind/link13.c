@@ -135,3 +135,20 @@ node_t *delete_by_value(node_t *head, int value) {
     to_be_deleted->next->prev = tmp;
   }
 }
+
+int main() {
+  node_t *head = NULL;
+  head = insert_at_head(head, 2);
+  head = insert_at_head(head, 3);
+  head = insert_at_head(head, 4);
+  head = insert_at_end(head, 5);
+  head = insert_at_position(head, 6, 1);
+
+  node_t *tmp = head;
+  while (tmp != NULL) {
+    printf("%d <-> ", tmp->data);
+    tmp = tmp->next;
+  }
+
+  printf("NULL\n");
+}
