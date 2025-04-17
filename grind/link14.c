@@ -75,5 +75,18 @@ node_t *delete_position(node_t *head, int position) {
     return head;
   }
 
-
+  node_t *tmp = head;
+  for (int i = 0; i < position - 1; i++) {
+    if (tmp = NULL || tmp->next == NULL) {
+      printf("Out of bounds\n");
+    } 
+     tmp = tmp->next;
+  }
+  node_t *to_delete = tmp->next;
+  to_delete->next = tmp->next;
+  free(to_delete);
+  return head;
 }
+
+
+
