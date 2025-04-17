@@ -88,5 +88,23 @@ node_t *delete_position(node_t *head, int position) {
   return head;
 }
 
+node_t *delete_by_value(node_t *head, int value) {
+  if (head == NULL) {
+    return NULL;
+  }
+  if (head->data == value) {
+    node_t *to_delete = head;
+    head = head->next;
+    free(to_delete);
+    return head;
+  }
 
+  node_t *tmp = head;
+
+  while (tmp->next != NULL && tmp->next->data != value) {
+    tmp = tmp->next;
+  }
+
+
+}
 
