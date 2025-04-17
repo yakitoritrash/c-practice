@@ -39,5 +39,11 @@ node_t *prepend(node_t *head, int value) {
   while (tmp->next != NULL) {
     tmp = tmp->next;
   }
+  tmp->next = new_node;
+  return head;
+}
 
+node_t *insert_at(node_t *head, int value, int position) {
+  node_t *new_node = create_node(value);
+  if (
 }
