@@ -26,3 +26,23 @@ void qs(int arr[], int lo, int hi) {
   qs(arr, lo, pivotIdx - 1);
   qs(arr, pivotIdx + 1, hi);
 }
+
+void quicksort(int arr[], int size) {
+  qs(arr, 0, size - 1);
+}
+
+int main() {
+  int arr[] = {32, 56, 11, 78, 43, 89, 23, 2, 7};
+  int size = sizeof(arr) / sizeof(arr[0]);
+
+  for (int i = 0; i < size; i++) {
+    printf("%d ", arr[i]);
+  }
+  printf("\n");
+
+  quicksort(arr, size);
+
+  for (int i = 0; i < size; i++) {
+    printf("%d ", arr[i]);
+  }
+}
