@@ -54,7 +54,7 @@ node_t *insert_at(node_t *head, int value, int position) {
   }
   node_t *tmp = head;
   for (int i = 0; i < position - 1; i++) {
-    if (tmp = NULL) {
+    if (tmp == NULL) {
       return NULL;
     }
     tmp = tmp->next;
@@ -77,7 +77,7 @@ node_t *delete_position(node_t *head, int position) {
 
   node_t *tmp = head;
   for (int i = 0; i < position - 1; i++) {
-    if (tmp = NULL || tmp->next == NULL) {
+    if (tmp == NULL || tmp->next == NULL) {
       printf("Out of bounds\n");
     } 
      tmp = tmp->next;
@@ -106,6 +106,7 @@ node_t *delete_by_value(node_t *head, int value) {
   }
   if (tmp->next == NULL) {
     printf("Nothing to delete here.\n");
+    return head;
   }
   node_t *to_delete = tmp->next;
   tmp->next = to_delete->next;
@@ -119,13 +120,15 @@ int main() {
   head = append(head, 2);
   head = append(head, 3);
   head = prepend(head, 4);
-  head = insert_at(head, 1);
-
+  head = insert_at(head, 1, 2);
+  
+  head = delete_position(head, 2);
+  head = delete_by_value(head, 2);
   node_t *tmp = head;
   while (tmp != NULL) {
     printf("%d -> ", tmp->data);
     tmp = tmp->next;
   }
 
-  printf("\n");
+  printf("NULL\n");
 }
