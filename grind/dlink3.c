@@ -141,6 +141,7 @@ int main() {
   
 
   head = delete_at(head, 2);
+  head = delete_value(head, 2);
   node_t *tmp = head;
   while (tmp != NULL) {
     printf("%d <-> ", tmp->data);
