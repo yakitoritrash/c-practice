@@ -116,6 +116,33 @@ node_t *delete_value(node_t *head, int value) {
   }
   node_t *tmp = head;
   while (tmp->next != NULL && tmp->next->data != value) {
-
+    tmp = tmp->next;
   }
+  if (tmp->next == NULL) {
+    printf("Out of bounds.\n");
+    return head;
+  }
+  node_t *to_delete = tmp->next;
+  tmp->next = to_delete->next;
+  if (to_delete->next != NULL) {
+    to_delete->next->prev = tmp;
+  }
+  free(to_delete);
+  return head;
+}
+
+int main() {
+  node_t *head = NULL;
+  head = prepend(head, 1);
+  head = prepend(head, 2);
+  head = append(head, 3);
+  head = insert_at(head, 4, 1);
+  head = prepend(head, 5);
+
+  node_t *tmp = head;
+  while (tmp != NULL) {
+    printf("%d <-> ", tmp->data);
+    tmp = tmp->next;
+  }
+  printf("NULL\n");
 }
