@@ -24,4 +24,9 @@ int is_empty(stack_t *stack) {
   return 0;
 }
 
-int is_full(stack_t *stack
+int is_full(stack_t *stack) {
+  if (stack->top == MAX_SIZE - 1) {
+    return 1;
+  }
+  return 0;
+}
