@@ -19,6 +19,7 @@ int main() {
     printf("%d ", arr[i]);
   }
   
+  printf("\n");
   bubblesort(arr, size);
 
   for (int i = 0; i < size; i++) {
