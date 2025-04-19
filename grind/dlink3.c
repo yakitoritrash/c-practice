@@ -7,6 +7,11 @@ typedef struct node_t {
   struct node_t *prev;
 } node_t;
 
+typedef struct list_t {
+  node_t *head;
+  node_t *tail;
+} list_t;
+
 node_t *create_node(int value) {
   node_t *new_node = malloc(sizeof(node_t));
   if (!new_node) {
@@ -97,7 +102,7 @@ node_t *delete_at(node_t *head, int position) {
   }
   node_t *to_delete = tmp->next;
   tmp->next = to_delete->next;
-  if (to_delete->next == NULL) {
+  if (to_delete->next != NULL) {
     to_delete->next->prev = tmp;
   }
   free(to_delete);
@@ -138,8 +143,6 @@ int main() {
   head = append(head, 3);
   head = insert_at(head, 4, 1);
   head = prepend(head, 5);
-  
-
   head = delete_at(head, 2);
   head = delete_value(head, 2);
   node_t *tmp = head;
