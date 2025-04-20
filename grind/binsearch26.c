@@ -22,7 +22,14 @@ int main() {
   int arr[] = {3, 4, 5, 6, 7, 8, 9};
   int n = 4;
   int size = sizeof(arr) / sizeof(arr[0]);
-
+  
+  for (int i = 0; i < size; i++) {
+    printf("%d ", arr[i]);
+  }
   int result = binsearch(arr, size, n);
   printf("%d", result);
+
+  for (int i = 0; i < size; i++) {
+    printf("%d ", arr[i]);
+  }
 }
