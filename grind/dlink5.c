@@ -136,3 +136,21 @@ node_t *delete_value(node_t *head, int value) {
   free(to_delete);
   return head;
 }
+
+
+int main() {
+  node_t *head = NULL;
+  head = prepend(head, 1);
+  head = prepend(head, 2);
+  head = append(head, 3);
+  head = insert_at(head, 4, 1);
+  head = prepend(head, 5);
+  head = delete_at(head, 2);
+  head = delete_value(head, 2);
+  node_t *tmp = head;
+  while (tmp != NULL) {
+    printf("%d <-> ", tmp->data);
+    tmp = tmp->next;
+  }
+  printf("NULL\n");
+}
