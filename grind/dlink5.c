@@ -70,12 +70,12 @@ node_t *insert_at(node_t *head, int value, int position) {
     }
     tmp = tmp->next;
   }
-  tmp->next = new_node;
   new_node->next = tmp->next;
   new_node->prev = tmp;
   if (new_node->next != NULL) {
     new_node->next->prev = new_node;
   }
+  tmp->next = new_node;
   return head;
 }
 
@@ -118,7 +118,7 @@ node_t *delete_value(node_t *head, int value) {
   }
 
   node_t *tmp = head;
-  while (tmp->next != NULL && tmp->next->data == value) {
+  while (tmp->next != NULL && tmp->next->data != value) {
     tmp = tmp->next;
   }
   if (tmp->next == NULL) {
