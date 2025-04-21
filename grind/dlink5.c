@@ -47,7 +47,7 @@ node_t *append(node_t *head, int value) {
   while (tmp->next != NULL) {
     tmp = tmp->next;
   }
-  tmp->next = new_node->next;
+  tmp->next = new_node;
   new_node->prev = tmp;
   return head;
 }
@@ -73,5 +73,15 @@ node_t *insert_at(node_t *head, int value, int position) {
     }
     tmp = tmp->next;
   }
+  tmp->next = new_node;
+  new_node->next = tmp->next;
+  new_node->prev = tmp;
+  if (new_node->next != NULL) {
+    new_node->next->prev = new_node;
+  }
+  return head;
+}
+
+node_t *delete_at(node_t *head, int position) {
 
 }
