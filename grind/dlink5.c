@@ -113,5 +113,8 @@ node_t *delete_value(node_t *head, int value) {
   if (head == NULL) {
     return NULL;
   }
+  if (head->data == value) {
+    node_t *to_delete = head;
 
+  }
 }
