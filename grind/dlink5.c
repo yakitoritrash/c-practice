@@ -102,5 +102,9 @@ node_t *delete_at(node_t *head, int position) {
   }
   node_t *to_delete = tmp->next;
   tmp->next = to_delete->next;
-
+  if (to_delete->next != NULL) {
+    to_delete->next->prev = tmp;
+  }
+  free(to_delete);
+  return head;
 }
