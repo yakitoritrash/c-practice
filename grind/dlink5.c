@@ -108,3 +108,10 @@ node_t *delete_at(node_t *head, int position) {
   free(to_delete);
   return head;
 }
+
+node_t *delete_value(node_t *head, int value) {
+  if (head == NULL) {
+    return NULL;
+  }
+
+}
