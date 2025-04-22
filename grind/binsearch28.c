@@ -8,7 +8,7 @@ int binsearch(int arr[], int size, int n) {
     int v = arr[m];
     if (v == n) { 
       return m;
-    } else if {
+    } else if (v > n) {
       hi = m - 1;
     } else {
       lo = m + 1;
