@@ -57,3 +57,11 @@ node_t *append(link_t *list, int value) {
   list->tail = new_node;
   return list->head;
 }
+
+node_t *insert_at(link *list, int value, int position) {
+  node_t *new_node = create_node(value);
+  if (list->head == NULL) {
+
+  }
+}
+
