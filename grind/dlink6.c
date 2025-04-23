@@ -97,7 +97,9 @@ node_t *delete_at(link *list, int position) {
 
   node_t *tmp = list->head;
   for (int i = 0; i < position - 1; i++) {
+    if (tmp == NULL || tmp->next == NULL) {
 
+    } 
   }
 }
 
