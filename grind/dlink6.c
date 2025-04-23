@@ -88,7 +88,8 @@ node_t *insert_at(link_t *list, int value, int position) {
 }
 
 node_t *delete_at(link *list, int position) {
-  
+  i
+
 }
 
 
