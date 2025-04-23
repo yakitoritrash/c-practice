@@ -88,14 +88,16 @@ node_t *insert_at(link_t *list, int value, int position) {
 }
 
 node_t *delete_at(link *list, int position) {
-  
   if (position == 0) {
     node_t *to_delete = list->head;
     list->head = list->head->next;
     free(to_delete);
     return list->head;
   }
+
+  node_t *tmp = list->head;
+  for (int i = 0; i < position - 1; i++) {
+
+  }
 }
-
-
 
