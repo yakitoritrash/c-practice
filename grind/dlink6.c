@@ -61,7 +61,35 @@ node_t *append(link_t *list, int value) {
 node_t *insert_at(link_t *list, int value, int position) {
   node_t *new_node = create_node(value);
   if (list->head == NULL) {
-
+    return NULL;
   }
+  if (position == 0) {
+    return prepend(list, value);
+  }
+  node_t *tmp = list->head;
+  for (int i = 0; i < position - 1; i++) {
+    if (tmp == NULL) {
+      printf("Out of bounds\n");
+      return list->head; 
+    }
+    tmp = tmp->next;
+  }
+
+  if (tmp == list->tail) {
+    return append(list, value);
+  }
+  new_node->next = tmp->next;
+  tmp->next = new_node;
+  if (new_node->next != NULL) {
+    new_node->next->prev = new_node;
+  }
+  new_node->prev = tmp;
+  return list->head;
 }
+
+node_t *delete_at(link *list, int position) {
+  
+}
+
+
 
