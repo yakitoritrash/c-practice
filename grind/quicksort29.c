@@ -30,3 +30,17 @@ void qs(int arr[], int lo, int hi) {
 void quicksort(int arr[], int size) {
   qs(arr, 0, size - 1);
 }
+
+int main() {
+  int arr[] = {34, 12, 54, 33, 12, 45, 86, 4, 3};
+  int size = sizeof(arr) / sizeof(arr[0]);
+  for (int i = 0; i < size; i++) {
+    printf("%d ", arr[i]);
+  }
+  printf("\n");
+  quicksort(arr, size);
+  for (int i = 0; i < size; i++) {
+    printf("%d ", arr[i]);
+  }
+}
+
