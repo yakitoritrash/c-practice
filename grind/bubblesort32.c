@@ -13,5 +13,5 @@ void bubblesort(int arr[], int size) {
 }
 
 int main() {
-  for 
+  int arr[] = {
 }
