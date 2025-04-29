@@ -20,5 +20,15 @@ node_t *create_node(int value) {
 
 node_t *prepend(node_t *head, int value) {
   node_t *new_node = create_node(value);
-
+  if (new_node == NULL) {
+    return head;
+  }
+  new_node->next = head;
+  if (head != NULL) {
+    head->prev = new_node;
+  }
+  new_node = head;
+  return new_node;
 }
+
+
