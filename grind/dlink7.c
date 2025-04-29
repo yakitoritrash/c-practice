@@ -40,5 +40,7 @@ node_t *append(node_t *head, int value) {
   if (head == NULL) {
     return new_node;
   }
+  node_t *tmp = head;
+
 
 }
