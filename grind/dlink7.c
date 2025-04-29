@@ -19,5 +19,6 @@ node_t *create_node(int value) {
 }
 
 node_t *prepend(node_t *head, int value) {i
+  node_t *new_node = create_node(value);
 
 }
