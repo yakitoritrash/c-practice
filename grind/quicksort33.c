@@ -4,5 +4,5 @@ int partition(int arr[], int lo, int hi) {
   int pivot = arr[hi];
   int idx = lo - 1;
 
-  for (int i = 0; 
+  for (int i = lo;  
 }
