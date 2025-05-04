@@ -51,3 +51,8 @@ node_t *append(node_t *head, int value) {
   }
   return head;
 }
+
+node_t *insert_at(node_t *head, int value, int position) {
+  node_t *new_node = create_node(value);
+
+}
