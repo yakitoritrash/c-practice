@@ -60,5 +60,7 @@ node_t *insert_at(node_t *head, int value, int position) {
   if (position == 0) {
     return prepend(head, value);
   }
-  
+  node_t *tmp = head;
+  :w
+
 }
