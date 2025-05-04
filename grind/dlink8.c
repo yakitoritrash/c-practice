@@ -45,4 +45,9 @@ node_t *append(node_t *head, int value) {
   while (tmp->next != NULL) {
     tmp = tmp->next;
   }
+  tmp->next = new_node;
+  if (tmp->next != NULL) {
+    new_node->prev = tmp;
+  }
+  return head;
 }
