@@ -11,5 +11,5 @@ int partition(int arr[], int lo, int hi) {
       arr[idx] = tmp;
     }
   }
-  `
+  
 }
