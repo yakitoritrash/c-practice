@@ -23,7 +23,7 @@ ListNode_t *mergeTwoLists(ListNode_t *head1, ListNode_t *head2) {
 }
 
 void printlist(ListNode_t *tmp) {
-  while (tmp->next != NULL) {
+  while (tmp!= NULL) {
     printf("%d -> ", tmp->val);
     tmp = tmp->next;
   }
@@ -47,16 +47,18 @@ int main() {
   head1->next->next = create_node(7);
 
   ListNode_t *head2 = create_node(4);
-  head1->next = create_node(6);
-  head1->next->next = create_node(8);
+  head2->next = create_node(6);
+  head2->next->next = create_node(8);
   
   ListNode_t *res = mergeTwoLists(head1, head2);
-  printlist(res);
-  printf("\n");
   printlist(head1);
   printf("\n");
   printlist(head2);
   printf("\n");
+  printlist(res);
+  printf("\n");
+
+
   return 0;
 }
 
