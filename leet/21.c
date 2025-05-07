@@ -52,6 +52,11 @@ int main() {
   
   ListNode_t *res = mergeTwoLists(head1, head2);
   printlist(res);
+  printf("\n");
+  printlist(head1);
+  printf("\n");
+  printlist(head2);
+  printf("\n");
   return 0;
 }
 
