@@ -36,5 +36,22 @@ ListNode_t *create_node(int val) {
     printf("Memory allocation failed.");
     return NULL;
   }
-
+  new_node->val = val;
+  new_node->next = NULL;
+  return new_node;
 }
+
+int main() {
+  ListNode_t *head1 = create_node(3);
+  head1->next = create_node(5);
+  head1->next->next = create_node(7);
+
+  ListNode_t *head2 = create_node(4);
+  head1->next = create_node(6);
+  head1->next->next = create_node(8);
+  
+  ListNode_t *res = mergeTwoLists(head1, head2);
+  printlist(res);
+  return 0;
+}
+
