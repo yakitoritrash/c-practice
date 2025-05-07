@@ -3,9 +3,13 @@
 
 bool duplicates_in_arr(int arr[], int size) {
   for (int i = 0; i < size; i++) {
-
+    for (int j = 1; j < size; j++) {
+      if (arr[i] == arr[j]) {
+        return true;
+      }
+    }
   }
-  
+  return false;
 }
 
 int main() {
