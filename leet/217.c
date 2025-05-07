@@ -3,7 +3,7 @@
 
 bool duplicates_in_arr(int arr[], int size) {
   for (int i = 0; i < size; i++) {
-    for (int j = 1; j < size; j++) {
+    for (int j = i + 1; j < size; j++) {
       if (arr[i] == arr[j]) {
         return true;
       }
@@ -13,7 +13,7 @@ bool duplicates_in_arr(int arr[], int size) {
 }
 
 int main() {
-  int arr[] = {4, 5, 6, 8, 2, 3};
+  int arr[] = {5, 6, 8, 2, 3};
   int size = sizeof arr / sizeof arr[0];
   bool res = duplicates_in_arr(arr, size);
   printf("%d\n", res);
