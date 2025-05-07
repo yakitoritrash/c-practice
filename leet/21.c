@@ -57,8 +57,6 @@ int main() {
   printf("\n");
   printlist(res);
   printf("\n");
-
-
   return 0;
 }
 
