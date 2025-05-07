@@ -42,9 +42,13 @@ void quicksort(int arr[], int size) {
   qs(arr, 0, size - 1);
 }
 
-void getseclargest(int arr[], int size) {
+int getseclargest(int arr[], int size) {
   quicksort(arr, size);
+  if (arr[0] == arr[1]) {
+    return -1;
+  }
   printf("%d ", arr[1]);
+  return 0;
 }
 
 
