@@ -15,4 +15,5 @@ bool duplicates_in_arr(int arr[], int size) {
 int main() {
   int arr[] = {3, 4, 5, 6, 8, 2, 3};
   int size = sizeof arr / sizeof arr[0];
+  duplicates_in_arr(arr, size);
 }
