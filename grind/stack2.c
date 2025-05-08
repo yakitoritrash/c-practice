@@ -51,5 +51,14 @@ node_t *peek(node_t *top) {
 }
 
 void print_stack(node_t *top) {
-  printf(""
+  printf("Stack top to bot: ");
+  while (top != NULL) {
+    printf("%d ", top->val);
+    top = top->prev;
+  }
+  printf("\n");
+}
+
+int main() {
+
 }
