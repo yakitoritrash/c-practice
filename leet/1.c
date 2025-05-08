@@ -19,14 +19,14 @@ int *twoSum(int arr[], int size, int target, int *returnsize) {
 int main() {
   int arr[] = {7, 3, 4, 5, 6, 8};
   int size = sizeof(arr) / sizeof(arr[0]);
-  int target = 9;
+  int target = 7;
   int returnsize;
 
   int *result = twoSum(arr, size, target, &returnsize);
 
   if (returnsize == 2) {
     for (int i = 0; i < 2; i++) {
-      printf("%d", result[i]);
+      printf("%d ", result[i]);
     }
   } else {
     printf("Not found.\n");
