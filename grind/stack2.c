@@ -60,5 +60,12 @@ void print_stack(node_t *top) {
 }
 
 int main() {
+  node_t *stack = NULL;
+  stack = push(stack, 30);
+  stack = push(stack, 20);
+  stack = push(stack, 10);
+  stack = push(stack, 40);
 
+  print_stack(stack);
+  peek(stack);
 }
