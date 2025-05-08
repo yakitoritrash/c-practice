@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdbool.h>
 #include <stdlib.h>
 
 typedef struct node_t {
@@ -60,6 +61,16 @@ void print_stack(node_t *top) {
   printf("\n");
 }
 
+bool isEmpty(node_t *top) {
+  if (top == NULL) {
+    return true;
+    printf("true");
+  } else {
+    return false;
+    printf("false");
+  }
+}
+
 int main() {
   node_t *stack = NULL;
   stack = push(stack, 30);
@@ -72,4 +83,5 @@ int main() {
   stack = pop(stack);
 
   print_stack(stack);
+  isEmpty(stack);
 }
