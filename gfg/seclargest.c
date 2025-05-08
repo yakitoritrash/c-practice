@@ -45,6 +45,7 @@ void quicksort(int arr[], int size) {
 int getseclargest(int arr[], int size) {
   quicksort(arr, size);
   if (arr[0] == arr[1]) {
+    printf("%d", -1);
     return -1;
   }
   printf("%d ", arr[1]);
@@ -53,7 +54,7 @@ int getseclargest(int arr[], int size) {
 
 
 int main() {
-  int arr[] = {4, 21, 4, 213, 56, 7, 43, 123, 67, 8, 62, 23, 68, 32, 90};
+  int arr[] = {4, 21, 4, 123, 56, 7, 43, 213, 67, 8, 62, 23, 68, 32, 90};
   int size = sizeof(arr) / sizeof(arr[0]);
 
 //  for (int i = 0; i < size; i++) {
