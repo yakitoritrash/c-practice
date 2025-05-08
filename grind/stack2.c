@@ -47,6 +47,7 @@ node_t *peek(node_t *top) {
     return NULL;
   }
   printf("%d",top->val);
+  printf("\n");
   return top;
 }
 
@@ -68,4 +69,7 @@ int main() {
 
   print_stack(stack);
   peek(stack);
+  stack = pop(stack);
+
+  print_stack(stack);
 }
