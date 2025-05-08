@@ -26,5 +26,9 @@ bool isAnagram(char *a, char *b) {
 int main() {
   char *a = "utah";
   char *b = "tuah";
-  isAnagram(a, b);
+  if (isAnagram(a, b)) {
+    printf("True");
+  } else {
+    printf("False");
+  }
 }
