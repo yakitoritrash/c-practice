@@ -63,11 +63,11 @@ void print_stack(node_t *top) {
 
 bool isEmpty(node_t *top) {
   if (top == NULL) {
-    return true;
     printf("true");
+    return true;
   } else {
-    return false;
     printf("false");
+    return false;
   }
 }
 
