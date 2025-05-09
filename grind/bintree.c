@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <stdbool.h>
 
 typedef struct node_t {
   int val;
@@ -38,4 +39,13 @@ void inorder_traversal(node_t *root) {
   inorder_traversal(root->left);
   printf("%d ", root->val);
   inorder_traversal(root->right);
+}
+
+bool search_node(node_t *root, int target) {
+  if (root == NULL) {
+    return false;
+  }
+  if (root->val == target) {
+    return true;
+  }
 }
