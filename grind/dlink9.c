@@ -46,5 +46,48 @@ node_t *append(node_t *head, int value) {
   return head;
 }
 
+node_t *insert_at(node_t *head, int value, int position) {
+  node_t *new_node = create_node(value);
+  if (head == NULL) {
+    return NULL;
+  }
+  if (position == 0) {
+    return prepend(head, value);
+  }
+  node_t *tmp = head;
+  for (int i = 0; i < position; i++) {
+    if (tmp== NULL || tmp->next == NULL) {
+      printf("Out of bounds");
+      return head;
+    }
+    tmp = tmp->next;
+  }
+  new_node->next = tmp->next;
+  tmp->next = new_node;
+  return head;
+}
 
+node_t *delete_at(node_t *head, int position) {
+  if (head == NULL) {
+    return NULL;
+  }
+  if (position == 0) {
+    node_t *to_delete = head;
+    head = to_delete->next;
+    free(to_delete);
+    return head;
+  }
+  node_t *tmp = head;
+  for (int i = 0; i <= position; i++) {
+    if (tmp == NULL || tmp->next == NULL) {
+      printf("out of bounds.\n");
+      return head;
+    }
+    tmp = tmp->next;
+  }
+  node_t *to_delete = tmp->next;
+  tmp->next = to_delete->next;
+  free(to_delete);
+  return head;
+}
 
