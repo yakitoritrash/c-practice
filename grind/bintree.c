@@ -48,4 +48,5 @@ bool search_node(node_t *root, int target) {
   if (root->val == target) {
     return true;
   }
+
 }
