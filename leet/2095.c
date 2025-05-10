@@ -6,5 +6,7 @@ typedef struct node_t {
   struct node_t *next;
 } node_t;
 
-
+node_t *create_node(int value) {
+  node_t *new_node = 
+}
 
