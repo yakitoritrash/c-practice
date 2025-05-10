@@ -10,7 +10,7 @@ int sum(int arr[], int n) {
 
 int main() {
   int arr[] = {5, 6, 7, 4, 3, 7};
-  int n = 4;
+  int n = 9;
   int result = sum(arr, n);
   printf("%d", result);
 }
