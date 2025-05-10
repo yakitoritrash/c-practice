@@ -27,6 +27,17 @@ node_t *prepend(node_t *head, int value) {
   return new_node;
 }
 
+node_t *delete_middle(node_t *head) {
+  int count = 0;
+  node_t *tmp = head;
+  while (tmp != NULL) {
+    tmp = tmp->next;
+    count++;
+  }
+  return head;
+  printf("%d", count);
+}
+
 int main() {
   node_t *head = NULL;
   head = prepend(head, 5);
@@ -40,4 +51,5 @@ int main() {
     tmp = tmp->next;
   }
   printf("NULL\n");
+  delete_middle(head);
 }
