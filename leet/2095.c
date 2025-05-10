@@ -34,7 +34,19 @@ node_t *delete_middle(node_t *head) {
     tmp = tmp->next;
     count++;
   }
-  printf("%d", count);
+  
+  node_t *tmp1 = head;
+  int cnt = count / 2;
+  for (int i = 0; i < cnt; i++) {
+    if (tmp1->next == NULL || tmp1 == NULL) {
+      printf("cannot delete\n");
+      return head;
+    }
+    tmp1 = tmp1->next;
+  }
+  node_t *to_delete = tmp1->next;
+  tmp->next = to_delete->next;
+  free(to_delete);
   return head;
 }
 
@@ -51,5 +63,4 @@ int main() {
     tmp = tmp->next;
   }
   printf("NULL\n");
-  delete_middle(head);
 }
