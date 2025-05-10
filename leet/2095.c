@@ -28,6 +28,9 @@ node_t *prepend(node_t *head, int value) {
 }
 
 node_t *delete_middle(node_t *head) {
+  if (head == NULL) {
+    return head;
+  }
   int count = 0;
   node_t *tmp = head;
   while (tmp != NULL) {
@@ -37,7 +40,14 @@ node_t *delete_middle(node_t *head) {
   
   node_t *tmp1 = head;
   int cnt = count / 2;
-  for (int i = 0; i < cnt; i++) {
+  if (cnt == 0) {
+    node_t *to_delete = head;
+    head = to_delete->next;
+    free(to_delete);
+    return head;
+  }
+
+  for (int i = 0; i < cnt - 1; i++) {
     if (tmp1->next == NULL || tmp1 == NULL) {
       printf("cannot delete\n");
       return head;
@@ -45,7 +55,7 @@ node_t *delete_middle(node_t *head) {
     tmp1 = tmp1->next;
   }
   node_t *to_delete = tmp1->next;
-  tmp->next = to_delete->next;
+  tmp1->next = to_delete->next;
   free(to_delete);
   return head;
 }
@@ -57,6 +67,7 @@ int main() {
   head = prepend(head, 15);
   head = prepend(head, 20);
 
+  head = delete_middle(head);
   node_t *tmp = head;
   while (tmp != NULL) {
     printf("%d -> ", tmp->val);
