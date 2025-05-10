@@ -34,8 +34,8 @@ node_t *delete_middle(node_t *head) {
     tmp = tmp->next;
     count++;
   }
-  return head;
   printf("%d", count);
+  return head;
 }
 
 int main() {
