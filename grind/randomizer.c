@@ -1,10 +1,10 @@
 #include <stdio.h>
+#include <time.h>
 
-
-unsigned int seed = 123456789;
+unsigned int seed;
 
 unsigned int my_random() {
-  seed = (1103515245 * seed + 12345) % (1 << 31);
+  seed = (1103515245 * seed + 12345) % (1U << 31);
   return seed;
 }
 
@@ -15,13 +15,14 @@ char* random(char* arr[], int size) {
 }
 
 int main() {
+
+  seed = (unsigned int)time(NULL);
   char* arr[] = {"jurrasic", "lego batman"};
   int size = sizeof(arr) / sizeof(arr[0]);
 
-  for (int i = 0; i < 5; i++) {
-    const char *movie = random(arr, size);
-    printf("%s", arr);
-  }
+  const char *movie = random(arr, size);
+  printf("%s", movie);
+
 
   return 0;
 }
