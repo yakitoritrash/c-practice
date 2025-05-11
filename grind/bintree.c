@@ -60,4 +60,17 @@ node_t *delete_a_node(node_t *root, int value) {
     return NULL;
   }
 
+  if (root->val > value) {
+    2
+  }
+  if (root->val == value) {
+    node_t *to_delete = root;
+    if (to_delete->left == NULL && to_delete->right == NULL) {
+      free(to_delete);
+      return root;
+    }
+    if (to_delete->left == NULL) {
+      
+    }
+  }
 }
