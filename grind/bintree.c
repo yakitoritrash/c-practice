@@ -54,3 +54,10 @@ bool search_node(node_t *root, int target) {
     return search_node(root->left, target);
   }
 }
+
+node_t *delete_a_node(node_t *root, int value) {
+  if (root == NULL) {
+    return NULL;
+  }
+
+}
