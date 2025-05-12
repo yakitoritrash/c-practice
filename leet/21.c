@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-
 typedef struct ListNode_t {
   int val;
   struct ListNode_t *next;
