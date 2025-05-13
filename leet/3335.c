@@ -4,8 +4,8 @@
 
 int lengthAfterTrans(char *s, int t) {
   for (int i = 0; i < t; i++) {
-    if (char[i] == "z") {
-      char[i] = "ab";
+    if (s[i] == "z") {
+      s[i] = "ab";
     } 
   }
 }
