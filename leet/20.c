@@ -24,5 +24,6 @@ bool isValid(char *s) {
 
 int main() {
   char *s = "{}";
-  isValid(s);
+  int result = (int)isValid(s);
+  printf("%d",result);
 }
