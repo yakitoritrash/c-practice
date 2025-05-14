@@ -23,7 +23,7 @@ bool isValid(char *s) {
 }
 
 int main() {
-  char *s = "{}";
+  char *s = "{)";
   int result = (int)isValid(s);
   printf("%d",result);
 }
