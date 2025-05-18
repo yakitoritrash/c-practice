@@ -20,3 +20,4 @@ int hash(char* str, int capacity) {
   return hash % capacity;
 }
 
+
