@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 typedef struct entry_t {
   char* key;
@@ -20,4 +21,8 @@ int hash(char* str, int capacity) {
   return hash % capacity;
 }
 
-
+hash_map *create_map(int capacity) {
+  hash_map *map = malloc(sizeof(hash_map));
+  int buckets = malloc(sizeof(capacity));
+  hash_map.capacity = capacity;
+}
