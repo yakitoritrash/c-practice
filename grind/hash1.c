@@ -23,6 +23,12 @@ int hash(char* str, int capacity) {
 
 hash_map *create_map(int capacity) {
   hash_map *map = malloc(sizeof(hash_map));
-  int buckets = malloc(sizeof(capacity));
-  hash_map.capacity = capacity;
+  if (!map) return NULL;
+  map->buckets = calloc(capacity,sizeof(entry_t*));
+  if (!map->buckets) {
+    free(map);
+    return NULL;
+  }
+  map->capacity = capacity;
+  return map;
 }
