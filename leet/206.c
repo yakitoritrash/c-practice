@@ -22,5 +22,11 @@ node_t *prepend(node_t *head, int value) {
   if (new_node == NULL) {
     return head;
   }
-  
+  new_node->next = head;
+  head = new_node;
+  return new_node;
+}
+
+node_t *reverse_list(node_t *head) {
+
 }
