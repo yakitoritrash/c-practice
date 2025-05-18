@@ -24,7 +24,7 @@ int hash(char* str, int capacity) {
 hash_map *create_map(int capacity) {
   hash_map *map = malloc(sizeof(hash_map));
   if (!map) return NULL;
-  map->buckets = calloc(capacity,sizeof(entry_t*));
+  map->buckets = calloc(capacity, sizeof(entry_t*));
   if (!map->buckets) {
     free(map);
     return NULL;
