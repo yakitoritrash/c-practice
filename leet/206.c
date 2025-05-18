@@ -29,5 +29,13 @@ node_t *prepend(node_t *head, int value) {
 
 node_t *reverse_list(node_t *head) {
   node_t *tmp = head;
-
+  node_t *next = NULL;
+  node_t *prev = NULL;
+  while (tmp != NULL) {
+    next = tmp->next;
+    tmp->next = prev;
+    prev = tmp;
+    tmp = next;
+  }
+  return prev;
 }
