@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 typedef struct entry_t {
   char* key;
@@ -33,4 +34,12 @@ hash_map *create_map(int capacity) {
   return map;
 }
 
-void put(
+void put(hash_map *map, char* key, int value) {
+  int bucketIdx = hash(key, map->capacity);
+  entry_t *entry = map->buckets[bucketIdx];
+  if (entry != NULL) {
+    if (strcmp(entry->key, key) == 0) {
+
+    }
+  }
+}
