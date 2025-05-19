@@ -51,4 +51,8 @@ void put(hash_map *map, char* key, int value) {
   map->buckets[bucketIdx] = new_entry;
 }
 
+void get(hash_map *map, char *key) {
+  int bucketIdx = hash(key, map->capacity);
+}
+
 
