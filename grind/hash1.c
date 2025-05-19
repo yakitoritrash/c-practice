@@ -39,7 +39,16 @@ void put(hash_map *map, char* key, int value) {
   entry_t *entry = map->buckets[bucketIdx];
   if (entry != NULL) {
     if (strcmp(entry->key, key) == 0) {
-
+      entry->value = value;
+      return;
     }
+    entry = entry->next;
   }
+  entry_t *new_entry = malloc(sizeof(entry_t));
+  new_entry->key = strdup(key);
+  new_entry->value = value;
+  new_entry->next = map->buckets[bucketIdx];
+  map->buckets[bucketIdx] = new_entry;
 }
+
+
