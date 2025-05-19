@@ -32,3 +32,5 @@ hash_map *create_map(int capacity) {
   map->capacity = capacity;
   return map;
 }
+
+void put(
