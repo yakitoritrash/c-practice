@@ -5,7 +5,7 @@
 #define HASH_SIZE 10000
 
 typedef struct hashnode_t {
-  char *key;
+  int key;
   int value;
   struct hashnode_t *next;
 } hashnode_t;
@@ -20,20 +20,20 @@ hashmap_t *create_map() {
   return map;
 }
 
-int hash(char *key) {
+int hash(int key) {
   unsigned long hash = 0;
   int c;
-  while ((c = *key++)) {
+  while ((c = key++)) {
     hash = hash * 31 + c;
   }
   return hash % HASH_SIZE;
 }
 
-void put(hashmap_t *map, char *key, int value) {
+void put(hashmap_t *map, int key, int value) {
   int bucketIdx = hash(key);
   hashnode_t *new_node = map->buckets[bucketIdx];
   if (new_node != NULL) {
-    if (strcmp(new_node->key, key) == 0) {
+    if (new_node->key == key) {
       new_node->value = value;
       return;
     }
@@ -46,4 +46,6 @@ void put(hashmap_t *map, char *key, int value) {
   map->buckets[bucketIdx] = new_node1;
 }
 
+int get(hashmap_t *map, int key) {
 
+}
