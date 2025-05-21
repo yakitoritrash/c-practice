@@ -13,15 +13,18 @@
 //  }
 
 
-int compare(void *a, void *b) {
+int compare(const void *a, const void *b) {
   return (*(int *)a - *(int *)b);
 }
 
 bool duplicates_in_arr(int arr[], int size) {
   qsort(arr, size, sizeof(int), compare);
   for (int i = 0; i < size; i++) {
-
+    if (arr[i] == arr[i + 1]) {
+      return true;
+    }
   }
+  return false;
 }
 
 int main() {
