@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdbool.h>
-
+#include <stdlib.h>
 //  bool duplicates_in_arr(int arr[], int size) {
 //    for (int i = 0; i < size; i++) {
 //      for (int j = i + 1; j < size; j++) {
@@ -12,46 +12,16 @@
 //    return false;
 //  }
 
-//  int partiton(int arr[], int lo, int hi) {
-//    int pivot = arr[hi];
-//    int idx = lo - 1;
-//    for (int i = lo; i <= hi; i++) {
-//      if (arr[i] < pivot) {
-//        idx++;
-//        int tmp = arr[i];
-//        arr[i] = arr[idx];
-//        arr[idx] = tmp;
-//      }
-//    }
-//    idx++;
-//    arr[hi] = arr[idx];
-//    arr[idx] = pivot;
-//    return idx;
-//  }
-//
-//  void qs(int arr[], int lo, int hi) {
-//    if (lo >= hi) {
-//      return;
-//    }
-//    int pivotIdx = partiton(arr, lo, hi);
-//    qs(arr, lo, pivotIdx - 1);
-//    qs(arr, pivotIdx + 1, hi);
-//  }
-//
-//  void quicksort(int arr[], int size) {
-//    qs(arr, 0, size - 1);
-//  }
 
-
+int compare(void *a, void *b) {
+  return (*(int *)a - *(int *)b);
+}
 
 bool duplicates_in_arr(int arr[], int size) {
-//  quicksort(arr, size);
-//  for (int i = 0; i < size - 1; i++) {
-//    if (arr[i] == arr[i+1]) {
-//      return true;
-//    }
-//  }
-//  return false;
+  qsort(arr, size, sizeof(int), compare);
+  for (int i = 0; i < size; i++) {
+
+  }
 }
 
 int main() {
