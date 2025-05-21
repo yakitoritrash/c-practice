@@ -68,5 +68,6 @@ int main() {
   put(map, "age", 25);
   put(map, "score", 95);
 
-
+  printf("Age: %d\n", get(map, "age"));
+  printf("Score: %d\n", get(map, "score")); 
 }
