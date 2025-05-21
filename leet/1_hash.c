@@ -47,5 +47,17 @@ void put(hashmap_t *map, int key, int value) {
 }
 
 int get(hashmap_t *map, int key) {
+  int index = hash(key);
+  hashnode_t *tmp = map->buckets[index];
+  while (tmp != NULL) {
+    if (tmp->key == key) {
+      return tmp->value;
+    }
+    tmp = tmp->next;
+  }
+  return -1;
+}
+
+int twoSum(int *nums, int numsSize, int target, int* returnSize) {
 
 }
