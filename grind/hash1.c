@@ -51,12 +51,22 @@ void put(hash_map *map, char* key, int value) {
   map->buckets[bucketIdx] = new_entry;
 }
 
-void get(hash_map *map, char *key) {
+int get(hash_map *map, char *key) {
   int bucketIdx = hash(key, map->capacity);
   entry_t *tmp = map->buckets[bucketIdx];
   while (tmp != NULL) {
-
+    if (strcmp(tmp->key, key) == 0) {
+      return tmp->value;
+    }
+    tmp = tmp->next;
   }
+  return -1;
 }
 
+int main() {
+  hash_map *map = create_map(10);
+  put(map, "age", 25);
+  put(map, "score", 95);
 
+
+}
