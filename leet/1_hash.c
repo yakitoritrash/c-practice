@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define HASH_SIZE 10000;
+#define HASH_SIZE 10000
 
 typedef struct hashnode_t {
   char *key;
