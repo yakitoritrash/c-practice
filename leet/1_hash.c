@@ -10,7 +10,7 @@ typedef struct hashnode_t {
 } hashnode_t;
 
 typedef struct hashmap_t {
-  hashnode_t* buckets[HASH_SIZE];
+  hashnode_t **buckets;
 } hashmap_t;
 
 hashmap_t *create_map() {
@@ -18,3 +18,5 @@ hashmap_t *create_map() {
   map->buckets = calloc(HASH_SIZE, sizeof(hashnode_t*));
   return map;
 }
+
+
