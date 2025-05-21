@@ -28,7 +28,7 @@ bool duplicates_in_arr(int arr[], int size) {
 }
 
 int main() {
-  int arr[] = {9, 3, 5, 6, 8, 2};
+  int arr[] = {9, 3, 5, 6, 8, 9, 2};
   int size = sizeof arr / sizeof arr[0];
   bool res = duplicates_in_arr(arr, size);
   printf("%d\n", res);
