@@ -36,5 +36,13 @@ item* binsearch(item* items, size_t size, const char* key) {
 }
 
 int main(void) {
-
+  item items[] = {
+    {"bar", 42}, {"bazz", 36}, {"bob", 11}, {"buzz", 7}, {"foo", 10}
+  };
+  size_t num_items = sizeof(items) / sizeof(item);
+  item key  = {"bob", 0};
+  item* found = binsearch(items, num_items, key);
+  if (found == NULL) {
+    return 1;
+  }
 }
