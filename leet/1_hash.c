@@ -59,5 +59,28 @@ int get(hashmap_t *map, int key) {
 }
 
 int twoSum(int *nums, int numsSize, int target, int* returnSize) {
+  hashmap_t *map = create_map();
+  *returnSize = 2;
+  int *result = (int*)malloc(2 * sizeof(int));
 
+  for (int i = 0; i < numsSize; i++) {
+    int complement = target - nums[i];
+    int complementIdx = get(map, complement);
+    if (complementIdx != -1) {
+      result[0] = complementIdx;
+      result[1] = i;
+    }
+    put(map, nums[i], i);
+  }
+  return NULL;
+}
+
+int main() {
+  int nums[] = {2, 7, 11, 15};
+  int target = 9;
+  int returnSize;
+  int numsSize = sizeof(nums) / sizeof(nums[0]);
+  int *result = twoSum(nums, numsSize, target, &returnSize);
+  printf("[%d, %d]", result[0], result[1]);
+  free(result);
 }
