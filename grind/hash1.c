@@ -53,7 +53,10 @@ void put(hash_map *map, char* key, int value) {
 
 void get(hash_map *map, char *key) {
   int bucketIdx = hash(key, map->capacity);
-  entry_t 
+  entry_t *tmp = map->buckets[bucketIdx];
+  while (tmp != NULL) {
+
+  }
 }
 
 
