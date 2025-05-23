@@ -19,7 +19,7 @@ bool flowerBed(int flowerbed[], int flowerbedsize, int n) {
 int main() {
   int flowerbed[] = {1, 0, 0, 0, 1};
   int flowerbedsize = sizeof(flowerbed) / sizeof(flowerbed[0]);
-  int n = 1;
+  int n = 2;
   int result = (int)flowerBed(flowerbed, flowerbedsize, n);
   printf("%d", result);
 }
