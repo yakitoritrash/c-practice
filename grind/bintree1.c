@@ -19,5 +19,11 @@ node_t *create_node(int value) {
   return new_node;
 }
 
-:w
+node_t *insert_node(node_t *root, int value) {
+  if (root == NULL) {
+    return create_node(value);
+  }
+  if (value < root->val) {
 
+  }
+}
