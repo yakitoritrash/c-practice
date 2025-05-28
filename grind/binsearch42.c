@@ -10,9 +10,9 @@ int binsearch(int arr[], int size, int n) {
     if (v == n) {
       return m;
     } else if (v > n) {
-      m = hi - 1;
+      hi = m - 1;
     } else {
-      m = lo + 1;
+      lo = m + 1;
     }
   }
   return -1;
