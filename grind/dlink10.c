@@ -103,6 +103,17 @@ node_t *delete_by_val(node_t *head, int val) {
   return head;
 }
 
-node_t *delete_at(node_t *head, int val) {
+node_t *delete_at(node_t *head, int pos) {
+  if (head == NULL) {
+    return NULL;
+  }
+  if (pos == 0) {
+    node_t *to_remove = head;
+    head = head->next;
+    free(to_remove);
+    return head;
+  }
+  for (int i = 0; i < pos - 1; i++) {
 
+  }
 }
