@@ -21,5 +21,11 @@ void qs(int arr[], int lo, int hi) {
   if (lo >= hi) {
     return;
   }
-  int 
+  int pivotIdx = partition(arr, lo, hi);
+  qs(arr, lo, pivotIdx - 1);
+  qs(arr, pivotIdx + 1, hi);
+}
+
+void quicksort(int arr[], int size) {
+
 }
