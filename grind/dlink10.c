@@ -113,7 +113,19 @@ node_t *delete_at(node_t *head, int pos) {
     free(to_remove);
     return head;
   }
+  node_t *tmp = head;
   for (int i = 0; i < pos - 1; i++) {
-
+    tmp = tmp->next;
   }
+  if (tmp->next == NULL) {
+    printf("Nothing to delete.\n");
+    return head;
+  }
+  node_t *to_remove = tmp->next;
+  tmp->next = to_remove->next;
+  if (to_remove->next != NULL) {
+    to_remove->next->prev = tmp;
+  }
+  free(to_remove);
+  return head;
 }
