@@ -34,4 +34,8 @@ node_t *prepend(node_t *head, int val) {
 
 node_t *append(node_t *head, int val) {
   node_t *new_node = create_node(val);
+  if (head == NULL) {
+    return new_node;
+  }
+
 }
