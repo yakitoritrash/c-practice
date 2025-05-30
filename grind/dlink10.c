@@ -133,43 +133,13 @@ node_t *delete_at(node_t *head, int pos) {
 int main() {
   node_t *head = NULL;
   head = prepend(head, 1);
-  node_t *tmp = head;
-  while (tmp != NULL) {
-    printf("%d <-> ", tmp->val);
-    tmp = tmp->next;
-  }
-  printf("NULL\n");
   head = prepend(head, 2);
-  while (tmp != NULL) {
-    printf("%d <-> ", tmp->val);
-    tmp = tmp->next;
-  }
-  printf("NULL\n");
   head = append(head, 3);
-  while (tmp != NULL) {
-    printf("%d <-> ", tmp->val);
-    tmp = tmp->next;
-  }
-  printf("NULL\n");
   head = insert_at(head, 4, 1);
-  while (tmp != NULL) {
-    printf("%d <-> ", tmp->val);
-    tmp = tmp->next;
-  }
-  printf("NULL\n");
   head = prepend(head, 5);
-  while (tmp != NULL) {
-    printf("%d <-> ", tmp->val);
-    tmp = tmp->next;
-  }
-  printf("NULL\n");
   head = delete_at(head, 2);
-  while (tmp != NULL) {
-    printf("%d <-> ", tmp->val);
-    tmp = tmp->next;
-  }
-  printf("NULL\n");
-  head = delete_by_val(head, 2);
+//  head = delete_by_val(head, 2);
+  node_t *tmp = head;
   while (tmp != NULL) {
     printf("%d <-> ", tmp->val);
     tmp = tmp->next;
