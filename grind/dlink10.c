@@ -75,3 +75,34 @@ node_t *insert_at(node_t *head, int val, int pos) {
   new_node->prev = tmp;
   return head;
 }
+
+node_t *delete_by_val(node_t *head, int val) {
+  if (head == NULL) {
+    return NULL;
+  }
+  if (val == head->val) {
+    node_t *to_remove = head;
+    head = head->next;
+    free(to_remove);
+    return head;
+  }
+  node_t *tmp = head;
+  while (tmp->next != NULL && tmp->next->val != val) {
+    tmp = tmp->next;
+  }
+  if (tmp->next == NULL) {
+    printf("Nothing to delete here.\n");
+    return head;
+  }
+  node_t *to_remove = tmp->next;
+  tmp->next = to_remove->next;
+  if (to_remove->next != NULL) {
+    to_remove->next->prev = tmp;
+  }
+  free(to_remove);
+  return head;
+}
+
+node_t *delete_at(node_t *head, int val) {
+
+}
