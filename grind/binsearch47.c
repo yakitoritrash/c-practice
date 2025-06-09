@@ -1,3 +1,5 @@
 #include <stdio.h>
 
-int binsearch
+int binsearch(int arr[], int size, int n) {
+
+}
