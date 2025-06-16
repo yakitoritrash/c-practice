@@ -20,4 +20,5 @@ int main() {
   int arr[] = {3, 4, 21, 12, 64, 12, 6, 2, 4};
   int size = sizeof(arr) / sizeof(arr[0]);
   int result = (int)contains_duplicate(arr, size);
+  printf("%d", result);
 }
