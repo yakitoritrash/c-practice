@@ -92,3 +92,18 @@ node_t *delete_a_node(node_t *root, int value) {
   return root;
 }
 
+int main() {
+  node_t *root = NULL;
+  root = insert_node(root, 10);
+  root = insert_node(root, 5);
+  root = insert_node(root, 15);
+  root = insert_node(root, 12);
+  root = insert_node(root, 17);
+
+  printf("Before deletion:\n");
+  inorder_traversal(root);
+
+  root = delete_a_node(root, 15);
+  printf("\nAfter deletion:\n");
+  inorder_traversal(root);
+}
