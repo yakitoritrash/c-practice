@@ -55,6 +55,13 @@ bool search_node(node_t *root, int target) {
   }
 }
 
+node_t *find_min(node_t *root) {
+  while (root && root->left != NULL) {
+    root = root->left;
+  }
+  return root;
+}
+
 node_t *delete_a_node(node_t *root, int value) {
   if (root == NULL) {
     return NULL;
@@ -62,15 +69,26 @@ node_t *delete_a_node(node_t *root, int value) {
 
   if (root->val > value) {
     root->left = delete_a_node(root->left, value);
-  }
-  if (root->val == value) {
-    node_t *to_delete = root;
-    if (to_delete->left == NULL && to_delete->right == NULL) {
-      free(to_delete);
-      return root;
+  } else if (value > root->val) {
+    root->right = delete_a_node(root->right, value);
+  } else {
+    if (root->left == NULL && root->right == NULL) {
+      free(root);
+      return NULL;
+    } else if (root->left == NULL) {
+      node_t *tmp = root->right;
+      free(root);
+      return tmp;
+    } else if (root->right == NULL) {
+      node_t *tmp = root->left;
+      free(root);
+      return tmp;
+    } else {
+      node_t *successor = find_min(root->right);
+      root->val = successor->val;
+      root->right = delete_a_node(root->right, successor->val);
     }
-    if (to_delete->left == NULL) {
-      
-    }
   }
+  return root;
 }
+
