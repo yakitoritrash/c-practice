@@ -61,7 +61,7 @@ node_t *delete_a_node(node_t *root, int value) {
   }
 
   if (root->val > value) {
-    2
+    root->left = delete_a_node(root->left, value);
   }
   if (root->val == value) {
     node_t *to_delete = root;
