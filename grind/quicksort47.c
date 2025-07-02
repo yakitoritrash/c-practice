@@ -3,7 +3,7 @@
 int partition(int arr[], int lo, int hi) {
   int pivot = arr[hi];
   int idx = lo - 1;
-  for (int i = lo; i < hi; i++) {
+  for (int i = lo; i <= hi; i++) {
     if (arr[i] < pivot) {
       idx++;
       int tmp = arr[i];
@@ -37,6 +37,8 @@ int main() {
   for (int i = 0; i < size; i++) {
     printf("%d ", arr[i]);
   }
+
+  printf("\n");
 
   quicksort(arr, size);
 
