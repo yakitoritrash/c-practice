@@ -9,15 +9,17 @@ int* two_sum_ii(int arr[], int k, int size) {
   while (left < right) {
     int sum = arr[left] + arr[right];
     if (sum == k) {
-      res[0] = left;
-      res[1] = right;
+      res[0] = left + 1;
+      res[1] = right + 1;
+      return res;
     } else if (sum > k) {
-      left++;
+      right--;
     } else {
-      right++;
+      left++;
     }
   }
-  return res;
+  free(res);
+  return NULL;
 }
 
 int main() {
@@ -26,6 +28,6 @@ int main() {
   int k = 9;
   int* res= two_sum_ii(arr, k, size);
   for (int i = 0; i < 2; i++) {
-    printf("%d", res[i]);
+    printf("%d ", res[i]);
   }
 }
