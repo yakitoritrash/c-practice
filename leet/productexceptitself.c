@@ -18,6 +18,7 @@ int* product_except(int arr[], int size) {
     right *= arr[i];
   }
   return obj;
+  free(obj);
 }
 
 int main() {
