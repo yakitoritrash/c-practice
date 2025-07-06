@@ -3,8 +3,8 @@
 int binsearch(int arr[], int size, int n) {
   int hi = size - 1;
   int lo = 0;
-  while (lo < hi) {
-    int m = lo + (hi - lo)/2;
+  while (lo <= hi) {
+    int m = lo + (hi - lo) / 2;
     int v = arr[m];
     if (v == n) {
       return m;
@@ -20,7 +20,7 @@ int binsearch(int arr[], int size, int n) {
 int main() {
   int arr[] = {2, 3, 4, 5, 6};
   int size = sizeof(arr) / sizeof(arr[0]);
-  int n = 4;
+  int n = 5;
   int result = binsearch(arr, size, n);
   printf("%d", result);
 }
