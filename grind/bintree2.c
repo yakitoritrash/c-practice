@@ -9,6 +9,6 @@ typedef struct root_t {
 
 root_t *create_node(int value) {
   root_t *new_root = malloc(sizeof(root_t));
-  
+
   return new_root;
 }
