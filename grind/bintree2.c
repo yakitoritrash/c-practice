@@ -19,4 +19,6 @@ root_t *create_node(int value) {
   return new_root;
 }
 
-root_t *
+root_t *insert_node(int value, root_t *root) {
+
+}
