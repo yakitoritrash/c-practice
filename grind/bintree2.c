@@ -18,3 +18,5 @@ root_t *create_node(int value) {
   new_root->right = NULL;
   return new_root;
 }
+
+root_t *
