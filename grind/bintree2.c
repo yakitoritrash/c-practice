@@ -36,5 +36,6 @@ void inordertaversal(root_t *root) {
   if (root == NULL) {
     return;
   }
-  if ()
+  inordertaversal(root->left);
+  inordertaversal(root->right);
 }
