@@ -31,3 +31,7 @@ root_t *insert_node(int value, root_t *root) {
   }
   return root;
 }
+
+void inordertaversal(root_t *root) {
+  
+}
