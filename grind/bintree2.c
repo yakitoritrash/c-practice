@@ -20,5 +20,10 @@ root_t *create_node(int value) {
 }
 
 root_t *insert_node(int value, root_t *root) {
-
+  if (root == NULL) {
+    return NULL;
+  }
+  root_t *new_root = malloc(sizeof(root_t));
+  
+  return root;
 }
