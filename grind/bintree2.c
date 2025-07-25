@@ -37,5 +37,6 @@ void inordertaversal(root_t *root) {
     return;
   }
   inordertaversal(root->left);
+  printf("%d ", root->val);
   inordertaversal(root->right);
 }
