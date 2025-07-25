@@ -24,6 +24,10 @@ root_t *insert_node(int value, root_t *root) {
     return NULL;
   }
   root_t *new_root = malloc(sizeof(root_t));
-  
+  if (value < root->val) {
+    root->left = insert_node(value, root);
+  } else if (value > root->val) {
+    root->right = insert_node(value, root);
+  }
   return root;
 }
