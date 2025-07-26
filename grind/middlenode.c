@@ -41,6 +41,23 @@ void middle_node(node_t *head, int n) {
   }
 }
 
-void print_list(node_t *head) {
+void print_list(node_t *head, int n) {
+  node_t *tmp = head;
+  for (int i = 0; i <= n; i++) {
+    printf("%d ", tmp->val);
+    tmp = tmp->next;
+  }
 }
-k
+
+int main() {
+  int n;
+  scanf("%d\n", &n);
+  node_t *head = NULL;
+  for (int i = 0; i <= n; i++) {
+    int x;
+    scanf("%d ", &x);
+    insert_head(x, head);
+  }
+  middle_node(head, n);
+  print_list(head, n);
+}
