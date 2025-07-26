@@ -20,44 +20,63 @@ node_t *create_node(int value) {
 
 node_t *insert_head(int value, node_t *head) {
   node_t *new_node = create_node(value);
+  if (!new_node) {
+    return head;
+  }
   if (head == NULL) {
     return new_node;
   }
   new_node->next = head;
   head->prev = new_node;
-  new_node = head;
-  return head;
+  return new_node;
 }
 
 void middle_node(node_t *head, int n) {
+  if (head == NULL) return;
   node_t *tmp = head;
-  for (int i = 0; i <= n / 2; i++) {
+  for (int i = 0; i < n / 2; i++) {
+    if (tmp->next == NULL) break;
     tmp = tmp->next;
   }
   if (n % 2 == 0) {
-    printf("%d %d", tmp->val, tmp->next->val);
-  } else if (n % 2 != 0) {
+    if (tmp->next != NULL) {
+      printf("%d %d", tmp->val, tmp->next->val);
+    }
+  } else {
     printf("%d", tmp->val);
   }
 }
 
 void print_list(node_t *head, int n) {
   node_t *tmp = head;
-  for (int i = 0; i <= n; i++) {
+  for (int i = 0; i < n && tmp != NULL; i++) {
     printf("%d ", tmp->val);
     tmp = tmp->next;
+  }
+  printf("\n");
+}
+
+void free_list(node_t *head) {
+  node_t *tmp;
+  while (head != NULL) {
+    tmp = head;
+    head = head->next;
+    free(tmp);
   }
 }
 
 int main() {
   int n;
-  scanf("%d\n", &n);
+  scanf("%d", &n);
   node_t *head = NULL;
-  for (int i = 0; i <= n; i++) {
+  for (int i = 0; i < n; i++) {
     int x;
     scanf("%d ", &x);
-    insert_head(x, head);
+    head = insert_head(x, head);
   }
   middle_node(head, n);
+  printf("\n");
   print_list(head, n);
+  free_list(head);
+  return 0;
 }
