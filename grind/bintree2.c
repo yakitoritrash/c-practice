@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdbool.h>
 #include <stdlib.h>
 
 typedef struct root_t {
@@ -39,4 +40,8 @@ void inordertaversal(root_t *root) {
   inordertaversal(root->left);
   printf("%d ", root->val);
   inordertaversal(root->right);
+}
+
+void searchtree(root_t *root) {
+  
 }
