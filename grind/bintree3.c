@@ -55,6 +55,7 @@ void inordertraversal(node_t *root) {
   }
   inordertraversal(root->left);
   printf("%d ",root->val);
+  printf("\n");
   inordertraversal(root->right);
   return;
 }
