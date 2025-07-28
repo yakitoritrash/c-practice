@@ -25,26 +25,24 @@ node_t *insert_node(int val, node_t *root) {
   if (root == NULL) {
     return new_node;
   }
-  if (new_node->val < root->val) {
-    root->left = new_node;
-  } else if (new_node->val > root->val) {
-    root->right = new_node;
+  if (val < root->val) {
+    root->left = insert_node(val, root->left);
+  } else if (new_node->val >= root->val) {
+    root->right = insert_node(val, root->right);
   }
   return root;
 }
 
 bool search_node(int val, node_t *root) {
   if (root == NULL) {
-    return NULL;
+    return false;
   }
-  node_t *tmp = root;
-  if (val == tmp->val) {
+  if (val == root->val) {
     return true;
-    printf("%d ", tmp->val);
-  } else if (val < tmp->val) {
-    tmp = tmp->left;
-  } else if (val > tmp->val) {
-    tmp = tmp->right;
+  } else if (val < root->val) {
+    return search_node(val, root->left);
+  } else if (val > root->val) {
+    return search_node(val, root->right);
   }
   return false;
 }
@@ -68,6 +66,6 @@ int main() {
   head = insert_node(10, head);
   inordertraversal(head);
   printf("\n");
-  int res = search_node(6, head);
+  bool res = search_node(6, head);
   printf("%d", res);
 }
