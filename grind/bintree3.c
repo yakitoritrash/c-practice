@@ -70,6 +70,7 @@ int main() {
   node_t *head = NULL;
   head = insert_node(5, head);
   head = insert_node(6, head);
+  head = insert_node(7, head);
   head = insert_node(3, head);
   head = insert_node(4, head);
   head = insert_node(10, head);
