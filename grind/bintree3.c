@@ -31,3 +31,27 @@ node_t *insert_node(int val, node_t *root) {
   }
   return root;
 }
+
+void search_node(int val, node_t *root) {
+  if (root == NULL) {
+    return;
+  }
+  node_t *tmp = root;
+  if (val == tmp->val) {
+    printf("%d", tmp->val);
+  } else if (val < tmp->val) {
+    tmp = tmp->left;
+  } else if (val > tmp->val) {
+    tmp = tmp->right;
+  }
+}
+
+node_t *inordertraversal(node_t *root) {
+  if (root == NULL) {
+    return NULL;
+  }
+  inordertraversal(root->left);
+  printf("%d",root->val);
+  inordertraversal(root->right);
+  return root;
+}
