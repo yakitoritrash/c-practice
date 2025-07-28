@@ -55,9 +55,9 @@ void inordertraversal(node_t *root) {
   }
   inordertraversal(root->left);
   printf("%d ",root->val);
-  printf("\n");
   inordertraversal(root->right);
   return;
+  printf("\n");
 }
 
 int main() {
@@ -68,6 +68,6 @@ int main() {
   head = insert_node(4, head);
   head = insert_node(10, head);
   inordertraversal(head);
-  int res = search_node(5, head);
+  int res = search_node(6, head);
   printf("%d", res);
 }
