@@ -65,8 +65,8 @@ int main() {
   head = insert_node(6, head);
   head = insert_node(3, head);
   head = insert_node(4, head);
-  head = insert_node(9, head);
   head = insert_node(10, head);
-  head = insert_node(9, head);
   inordertraversal(head);
+  int res = search_node(5, head);
+  printf("%d", res);
 }
