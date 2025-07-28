@@ -57,6 +57,15 @@ void inordertraversal(node_t *root) {
   return;
 }
 
+void preordertraversal(node_t *root) {
+  if (root == NULL) {
+    return; 
+  }
+  preordertraversal(root->left);
+  preordertraversal(root->right);
+  printf("%d ", root->val); 
+}
+
 int main() {
   node_t *head = NULL;
   head = insert_node(5, head);
@@ -67,5 +76,6 @@ int main() {
   inordertraversal(head);
   printf("\n");
   bool res = search_node(6, head);
-  printf("%d", res);
+  printf("%d\n", res);
+  preordertraversal(head);
 }
