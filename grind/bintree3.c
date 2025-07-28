@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdbool.h>
 #include <stdlib.h>
 
 typedef struct node_t {
@@ -32,18 +33,20 @@ node_t *insert_node(int val, node_t *root) {
   return root;
 }
 
-void search_node(int val, node_t *root) {
+bool search_node(int val, node_t *root) {
   if (root == NULL) {
-    return;
+    return NULL;
   }
   node_t *tmp = root;
   if (val == tmp->val) {
-    printf("%d", tmp->val);
+    return true;
+    printf("%d ", tmp->val);
   } else if (val < tmp->val) {
     tmp = tmp->left;
   } else if (val > tmp->val) {
     tmp = tmp->right;
   }
+  return false;
 }
 
 void inordertraversal(node_t *root) {
@@ -51,7 +54,7 @@ void inordertraversal(node_t *root) {
     return;
   }
   inordertraversal(root->left);
-  printf("%d",root->val);
+  printf("%d ",root->val);
   inordertraversal(root->right);
   return;
 }
@@ -60,10 +63,10 @@ int main() {
   node_t *head = NULL;
   head = insert_node(5, head);
   head = insert_node(6, head);
-  head = insert_node(7, head);
-  head = insert_node(8, head);
+  head = insert_node(3, head);
+  head = insert_node(4, head);
   head = insert_node(9, head);
   head = insert_node(10, head);
+  head = insert_node(9, head);
   inordertraversal(head);
-  search_node(6, head);
 }
