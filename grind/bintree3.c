@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+typedef struct node_t {
+  int val;
+  struct node_t *left_node;
+  struct node_t *right_node;
+} node_t;
 
-int main() {
-}
