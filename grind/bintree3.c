@@ -46,12 +46,24 @@ void search_node(int val, node_t *root) {
   }
 }
 
-node_t *inordertraversal(node_t *root) {
+void inordertraversal(node_t *root) {
   if (root == NULL) {
-    return NULL;
+    return;
   }
   inordertraversal(root->left);
   printf("%d",root->val);
   inordertraversal(root->right);
-  return root;
+  return;
+}
+
+int main() {
+  node_t *head = NULL;
+  head = insert_node(5, head);
+  head = insert_node(6, head);
+  head = insert_node(7, head);
+  head = insert_node(8, head);
+  head = insert_node(9, head);
+  head = insert_node(10, head);
+  inordertraversal(head);
+  search_node(6, head);
 }
