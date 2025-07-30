@@ -35,7 +35,7 @@ void inordertraversal(node_t *root) {
     return;
   }
   inordertraversal(root->left);
-  printf("%d ", root->val);
+  printf("inorder: %d ", root->val);
   inordertraversal(root->right);
 }
 
@@ -45,14 +45,14 @@ void postorder(node_t *root) {
   }
   postorder(root->left);
   postorder(root->right);
-  printf("%d ", root->val);
+  printf("postorder: %d ", root->val);
 }
 
 void preorder(node_t *root) {
   if (root == NULL) {
     return;
   }
-  printf("%d ", root->val);
+  printf("preorder: %d ", root->val);
   preorder(root->left);
   preorder(root->right);
 }
