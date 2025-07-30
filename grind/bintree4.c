@@ -29,3 +29,7 @@ node_t *insert_node(int val, node_t *root) {
   }
   return root;
 }
+
+void inordertraversal(node_t *root) {
+
+}
