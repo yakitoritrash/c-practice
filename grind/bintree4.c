@@ -63,14 +63,12 @@ bool search(int val, node_t *root) {
     return false;
   }
   if (val == root->val) {
-    printf("true");
     return true;
   } else if (val > root->val) {
-    search(val, root->right);
+    return search(val, root->right);
   } else {
-    search(val, root->left);
+    return search(val, root->left);
   }
-  printf("false");
   return false;
 }
 int main() {
@@ -95,9 +93,5 @@ int main() {
   printf("preorder: ");
   preorder(head);
   printf("\n");
-  search(5, head);
-  search(4, head);
-  search(50, head);
-  search(48, head);
+ printf("%d %d %d %d", search(5, head), search(4, head), search(50, head),search(48, head));
 }
-
