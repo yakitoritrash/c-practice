@@ -35,7 +35,7 @@ void inordertraversal(node_t *root) {
     return;
   }
   inordertraversal(root->left);
-  printf("inorder: %d ", root->val);
+  printf("%d ", root->val);
   inordertraversal(root->right);
 }
 
@@ -45,14 +45,14 @@ void postorder(node_t *root) {
   }
   postorder(root->left);
   postorder(root->right);
-  printf("postorder: %d ", root->val);
+  printf("%d ", root->val);
 }
 
 void preorder(node_t *root) {
   if (root == NULL) {
     return;
   }
-  printf("preorder: %d ", root->val);
+  printf("%d ", root->val);
   preorder(root->left);
   preorder(root->right);
 }
@@ -69,10 +69,13 @@ int main() {
   head = insert_node(15, head);
   head = insert_node(47, head);
   head = insert_node(49, head);
+  printf("inorder: ");
   inordertraversal(head);
   printf("\n");
+  printf("postorder: ");
   postorder(head);
   printf("\n");
+  printf("preorder: ");
   preorder(head);
   printf("\n");
 }
