@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
 typedef struct node_t {
   int val;
@@ -56,6 +57,22 @@ void preorder(node_t *root) {
   preorder(root->left);
   preorder(root->right);
 }
+
+bool search(int val, node_t *root) {
+  if (root == NULL) {
+    return false;
+  }
+  if (val == root->val) {
+    printf("true");
+    return true;
+  } else if (val > root->val) {
+    search(val, root->right);
+  } else {
+    search(val, root->left);
+  }
+  printf("false");
+  return false;
+}
 int main() {
   node_t *head = NULL;
   head = insert_node(40, head);
@@ -78,5 +95,9 @@ int main() {
   printf("preorder: ");
   preorder(head);
   printf("\n");
+  search(5, head);
+  search(4, head);
+  search(50, head);
+  search(48, head);
 }
 
