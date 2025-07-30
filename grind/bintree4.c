@@ -71,6 +71,7 @@ bool search(int val, node_t *root) {
   }
   return false;
 }
+
 int main() {
   node_t *head = NULL;
   head = insert_node(40, head);
