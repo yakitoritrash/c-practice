@@ -42,15 +42,19 @@ void inordertraversal(node_t *root) {
 
 int main() {
   node_t *head = NULL;
-  int n;
-  scanf("%d", &n);
-  for (int i = 0; i <= n; i++) {
-    int x;
-    scanf("%d", &x);
-    head = insert_node(x, head); 
-    inordertraversal(head);
-    printf("\n");
-  }
-  printf("\n");
+//  int n;
+//  scanf("%d", &n);
+//  for (int i = 0; i <= n; i++) {
+//    int x;
+//    scanf("%d", &x);
+//    head = insert_node(x, head); 
+//    inordertraversal(head);
+//    printf("\n");
+//  }
+  head = insert_node(5, head);
+  head = insert_node(68, head);
+  head = insert_node(95, head);
+  head = insert_node(3, head);
+  head = insert_node(56, head);
   inordertraversal(head);
 }
