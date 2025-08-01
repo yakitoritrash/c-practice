@@ -31,7 +31,19 @@ node_t *insert_node(int val, node_t *root) {
   return root;
 }
 
+void inordertraversal(node_t *root) {
+  if (root == NULL) {
+    return;
+  }
+  inordertraversal(root->left);
+  printf("%d ", root->val);
+  inordertraversal(root->right);
+}
 int main() {
   node_t *head = NULL;
+  int n;
+  for (int i = 0; i <= n; i++) {
+
+  }
 }
 
