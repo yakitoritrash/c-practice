@@ -36,14 +36,20 @@ void inordertraversal(node_t *root) {
     return;
   }
   inordertraversal(root->left);
-  printf("%d ", root->val);
+  printf("%d -> ", root->val);
   inordertraversal(root->right);
 }
 int main() {
   node_t *head = NULL;
   int n;
   for (int i = 0; i <= n; i++) {
-
+    int x;
+    scanf("%d ", &x);
+    head = insert_node(x, head); 
+    inordertraversal(head);
+    printf("\n");
   }
+  printf("\n");
+  inordertraversal(head);
 }
 
