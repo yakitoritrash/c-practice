@@ -20,6 +20,16 @@ node_t *create_node(int val) {
 
 node_t *insert_node(int val, node_t *root) {
   node_t *new_node = create_node(val);
-  
+  if (root == NULL) {
+    return new_node;
+  }
+  if (val < root->val) {
+    insert_node(val, root->left);
+  } else if (val >= root->val) {
+    insert_node(val, root->right);
+  }
   return root;
 }
+
+
+
