@@ -19,7 +19,7 @@ node_t *create_node(int val) {
 }
 
 node_t *insert_at_head(int val, node_t *head) {
-  node_t *new_node = create_node(val);
+  node_t *new_node = (node_t *)create_node(val);
   if (head == NULL) {
     return new_node;
   }
