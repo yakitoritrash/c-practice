@@ -53,12 +53,23 @@ void printlist(node_t *head) {
 
 int main() {
   node_t *head = NULL;
-  head = insert_at_head(5, head);
-  head = insert_at_head(6, head);
-  head = insert_at_head(7, head);
-  head = insert_at_head(8, head);
-  head = insert_at_head(9, head);
-  head = insert_at_head(10, head);
-  head = insert_middle(11, head, 6);
+//  head = insert_at_head(5, head);
+//  head = insert_at_head(6, head);
+//  head = insert_at_head(7, head);
+//  head = insert_at_head(8, head);
+//  head = insert_at_head(9, head);
+//  head = insert_at_head(10, head);
+//  head = insert_middle(11, head, 6);
+  printlist(head);
+  int n;
+  scanf("%d", &n);
+  for (int i = 0; i < n; i++) {
+    int x;
+    scanf("%d", &x);
+    head = insert_at_head(x, head);
+  }
+  int k;
+  scanf("%d", &k);
+  head = insert_middle(k, head, n);
   printlist(head);
 }
