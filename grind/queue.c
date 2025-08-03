@@ -28,10 +28,12 @@ node_t *enqueue(int val, node_t *head) {
 
 node_t *dequeue(node_t *head) {
   node_t *tmp = head;
-  while (tmp != NULL) {
+  while (tmp->next->next != NULL) {
     tmp = tmp->next;
   }
-  free(tmp);
+  node_t *to_delete = tmp->next->next;
+  tmp->next = NULL;
+  free(to_delete);
   return head;
 }
 
@@ -50,5 +52,8 @@ int main() {
   head = enqueue(9, head);
   head = enqueue(10, head);
   head = enqueue(11, head);
+  head = dequeue(head);
+  head = dequeue(head);
+  head = enqueue(12 , head);
   printlist(head);
 }
