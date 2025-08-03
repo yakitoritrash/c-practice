@@ -25,3 +25,30 @@ node_t *enqueue(int val, node_t *head) {
   head = new_node;
   return head;
 }
+
+node_t *dequeue(node_t *head) {
+  node_t *tmp = head;
+  while (tmp != NULL) {
+    tmp = tmp->next;
+  }
+  free(tmp);
+  return head;
+}
+
+void printlist(node_t *head) {
+  node_t *tmp = head;
+  while (tmp != NULL) {
+    printf("%d ", tmp->val);
+    tmp = tmp->next;
+  }
+}
+
+int main() {
+  node_t *head = NULL;
+  head = enqueue(5, head);
+  head = enqueue(7, head);
+  head = enqueue(9, head);
+  head = enqueue(10, head);
+  head = enqueue(11, head);
+  printlist(head);
+}
