@@ -6,7 +6,21 @@ int binsearch(int arr[], int size, int n) {
   while (lo <= hi) {
     int m = hi - (hi + lo) / 2; 
     int v = arr[m];
-
+    if (v == n) {
+      return m;
+    } else if (v > n) {
+      hi = m;
+    } else {
+      lo = m + 1;
+    }
   }
   return -1;
+}
+
+int main() {
+  int arr[] = {2, 3, 4, 5, 6, 7};
+  int size = sizeof(arr) / sizeof(arr[0]);
+  int n = 6;
+  int res = binsearch(arr, size, n);
+  printf("%d", res);
 }
