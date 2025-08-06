@@ -48,6 +48,8 @@ int main() {
     int x;
     scanf("%d", &x);
     root = insert_node(x, root);
+    inordertraverse(root);
+    printf("\n");
   }
   inordertraverse(root);
 }
