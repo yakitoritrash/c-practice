@@ -42,4 +42,12 @@ void inordertraverse(node_t *root) {
 
 int main() {
   int n;
+  scanf("%d", &n);
+  node_t *root  = NULL;
+  for (int i = 0; i < n; i++) {
+    int x;
+    scanf("%d", &x);
+    root = insert_node(x, root);
+  }
+  inordertraverse(root);
 }
