@@ -69,10 +69,8 @@ int main() {
     root = insert_node(x, root);
     inordertraverse(root);
     printf("\n");
+    preorder(root);
+    printf("\n");
+    postorder(root);
   }
-  inordertraverse(root);
-  printf("\n");
-  preorder(root);
-  printf("\n");
-  postorder(root);
 }
