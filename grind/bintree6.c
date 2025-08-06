@@ -40,6 +40,25 @@ void inordertraverse(node_t *root) {
   inordertraverse(root->right);
 }
 
+void preorder(node_t *root) {
+  if (root == NULL) {
+    return;
+  }
+  printf("%d ", root->val);
+  preorder(root->left);
+  preorder(root->right);
+}
+
+
+void postorder(node_t *root) {
+  if (root == NULL) {
+    return;
+  }
+  preorder(root->left);
+  preorder(root->right);
+  printf("%d ", root->val);
+}
+
 int main() {
   int n;
   scanf("%d", &n);
@@ -52,4 +71,8 @@ int main() {
     printf("\n");
   }
   inordertraverse(root);
+  printf("\n");
+  preorder(root);
+  printf("\n");
+  postorder(root);
 }
