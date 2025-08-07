@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 typedef struct node_t {
   int val;
@@ -57,10 +58,19 @@ int main() {
   int n;
   scanf("%d", &n);
   node_t *root = NULL;
-  for (int i = 0; i < n; i++) {
-    int x;
-    scanf("%d", &x);
+//  for (int i = 0; i < n; i++) {
+//    int x;
+//    scanf("%d", &x);
+//    root = insert_node(x, root);
+//  }
+  while (getchar() != '\n');
+  char buff[1000];
+  fgets(buff, sizeof(buff), stdin);
+  char *token = strtok(buff, " \n");
+  while (token != NULL) {
+    int x = atoi(token);
     root = insert_node(x, root);
+    token = strtok(NULL, " \n");
   }
   inordertraverse(root);
   invert(root);
