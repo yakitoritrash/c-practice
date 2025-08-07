@@ -63,5 +63,6 @@ int main() {
   }
   inordertraverse(root);
   invert(root);
+  printf("\n");
   inordertraverse(root);
 }
