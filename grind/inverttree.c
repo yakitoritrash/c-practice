@@ -40,8 +40,16 @@ void inordertraverse(node_t *root) {
   inordertraverse(root->right);
 }
 
-node_t *invert(node_t *root) {
+void invert(node_t *root) {
+  if (root == NULL) {
+    return;
+  }
+  node_t *tmp = root->left;
+  root->left = root->right;
+  root->right = tmp;
 
+  invert(root->left);
+  invert(root->right);
 }
 
 int main() {
@@ -53,5 +61,7 @@ int main() {
     scanf("%d", &x);
     root = insert_node(x, root);
   }
+  inordertraverse(root);
+  invert(root);
   inordertraverse(root);
 }
