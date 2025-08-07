@@ -39,3 +39,11 @@ void inordertraverse(node_t *root) {
   printf("%d ", root->val);
   inordertraverse(root->right);
 }
+
+int main() {
+  int n;
+  scanf("%d", &n);
+  for (int i = 0; i < n; i++) {
+
+  }
+}
