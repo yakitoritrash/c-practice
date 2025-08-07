@@ -40,6 +40,10 @@ void inordertraverse(node_t *root) {
   inordertraverse(root->right);
 }
 
+node_t *invert(node_t *root) {
+
+}
+
 int main() {
   int n;
   scanf("%d", &n);
