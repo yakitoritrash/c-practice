@@ -31,4 +31,3 @@ node_t *insert_node(int val, node_t *root) {
   return root;
 }
 
-
