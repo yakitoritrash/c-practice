@@ -31,3 +31,11 @@ node_t *insert_node(int val, node_t *root) {
   return root;
 }
 
+void inordertraverse(node_t *root) {
+  if (root == NULL) {
+    return;
+  }
+  inordertraverse(root->left);
+  printf("%d ", root->val);
+  inordertraverse(root->right);
+}
