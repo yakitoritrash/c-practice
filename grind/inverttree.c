@@ -52,6 +52,7 @@ void invert(node_t *root) {
   invert(root->right);
 }
 
+
 int main() {
   int n;
   scanf("%d", &n);
