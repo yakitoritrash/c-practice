@@ -49,7 +49,6 @@ void preorder(node_t *root) {
   preorder(root->right);
 }
 
-
 void postorder(node_t *root) {
   if (root == NULL) {
     return;
