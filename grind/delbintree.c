@@ -79,7 +79,7 @@ bool find(int val, node_t *root) {
   if (root == NULL) {
     return false;
   }
-  if (val == root->val) {
+  if (root->val == val) {
     return true;
   }
   if (val < root->val) {
@@ -87,7 +87,7 @@ bool find(int val, node_t *root) {
   } else if (val > root->val) {
     find(val, root->right);
   }
-  return -1;
+  return false;
 }
 
 int main() {
