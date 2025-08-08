@@ -31,9 +31,44 @@ node_t *insert_node(int val, node_t *root) {
 }
 
 void inordertraverse(node_t *root) {
+  if (root == NULL) {
+    return;
+  }
   inordertraverse(root->left);
   printf("%d ", root->val);
   inordertraverse(root->right);
 }
 
+node_t *findmin(node_t *root) {
+  while (root && root->left != NULL) {
+    root = root->left;
+  }
+  return root;
+}
 
+node_t *delete_node(node_t *root, int del) {
+  if (root == NULL) {
+    return NULL;
+  }
+  if (del < root->val) {
+    root->left = delete_node(root->left, del);
+  } else if (del > root->val) {
+    root->right = delete_node(root->right, del);
+  } else {
+    if (root->left == NULL) {
+      node_t *tmp = root->right;
+      free(root);
+      return tmp;
+    } else if (root->right == NULL) {
+      node_t *tmp = root->left;
+      free(root);
+      return tmp;
+    } else if (root->right == NULL && root->left == NULL) {
+      free(root);
+      return NULL;
+    }
+    node_t *min = findmin(root);
+
+  }
+  return root;
+}
