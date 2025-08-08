@@ -67,8 +67,9 @@ node_t *delete_node(node_t *root, int del) {
       free(root);
       return NULL;
     }
-    node_t *min = findmin(root);
-
+    node_t *min = findmin(root->right);
+    root->val = min->val;
+    root->right = delete_node(root->right, min->val);
   }
   return root;
 }
