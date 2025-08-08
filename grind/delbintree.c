@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdbool.h>
 #include <stdlib.h>
 
 typedef struct node_t {
@@ -74,6 +75,21 @@ node_t *delete_node(node_t *root, int del) {
   return root;
 }
 
+bool find(int val, node_t *root) {
+  if (root == NULL) {
+    return false;
+  }
+  if (val == root->val) {
+    return true;
+  }
+  if (val < root->val) {
+    find(val, root->left);
+  } else if (val > root->val) {
+    find(val, root->right);
+  }
+  return -1;
+}
+
 int main() {
   int n;
   scanf("%d", &n);
@@ -81,11 +97,17 @@ int main() {
   for (int i = 0; i < n; i++) {
     int x;
     scanf("%d", &x);
-    insert_node(x, root);
+    root = insert_node(x, root);
   }
   int x;
   scanf("%d", &x);
+  int y;
+  scanf("%d", &y);
   inordertraverse(root);
   delete_node(root, x);
+  printf("\n");
   inordertraverse(root);
+  int res = find(y, root);
+  printf("\n");
+  printf("%d", res);
 }
