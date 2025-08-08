@@ -83,9 +83,9 @@ bool find(int val, node_t *root) {
     return true;
   }
   if (val < root->val) {
-    find(val, root->left);
+    return find(val, root->left);
   } else if (val > root->val) {
-    find(val, root->right);
+    return find(val, root->right);
   }
   return false;
 }
