@@ -32,15 +32,17 @@ node_t *insert_node(int val, node_t *root) {
 }
 
 void inordertraverse(node_t *root) {
+  if (root == NULL) {
+    return;
+  }
   inordertraverse(root->left);
   printf("%d ", root->val);
   inordertraverse(root->right);
 }
 
 node_t *findmin(node_t *root) {
-  root = root->left;
-  while (root != NULL && root->right != NULL) {
-    root = root->right;
+  while (root && root->left != NULL) {
+    root = root->left;
   }
   return root;
 }
@@ -64,14 +66,31 @@ node_t *delete_node(int del, node_t *root) {
       free(root);
       return tmp;
     }
-    node_t *min = findmin(root); 
+    if (root->left == NULL && root->right == NULL) {
+      free(root);
+      return NULL;
+    }
+    node_t *min = findmin(root->right); 
     root->val = min->val;
-    root->left = delete_node(min->val, root->left);
+    root->right = delete_node(min->val, root->right);
   }
   return root;
 }
 
 int main() {
   int n;
-  scanf("%d", 
+  scanf("%d", &n);
+  node_t *root = NULL;
+  for (int i = 0; i < n; i++) {
+    int x;
+    scanf("%d", &x);
+    root = insert_node(x, root);
+  }
+  int x;
+  scanf("%d", &x);
+  printf("Before deletion: ");
+  inordertraverse(root);
+  root = delete_node(x, root);
+  printf("\nAfter deletion: ");
+  inordertraverse(root);
 }
