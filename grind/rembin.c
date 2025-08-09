@@ -95,7 +95,7 @@ int main() {
   for (int i = 0; i < n; i++) {
     int x;
     scanf("%d", &x);
-    insert_node(x, root);
+    root = insert_node(x, root);
   }
   int y;
   scanf("%d", &y);
