@@ -88,6 +88,18 @@ node_t *delete_node(node_t *root, int del) {
   return root;
 }
 
+node_t *invert_tree(node_t *root) {
+  if (root == NULL) {
+    return NULL;
+  }
+  node_t *tmp = root->right;
+  root->right = root->left;
+  root->left = tmp;
+  invert_tree(root->left);
+  invert_tree(root->right);
+  return root;
+}
+
 int main() {
   int n;
   scanf("%d", &n);
@@ -103,5 +115,7 @@ int main() {
   delete_node(root, y);
   printf("\n");
   inorder(root);
-
+  invert_tree(root);
+  printf("\n");
+  inorder(root);
 }
