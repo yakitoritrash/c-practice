@@ -12,7 +12,7 @@ bool anagram(char *t, char *s) {
   int hash2[alphabet] = {0};
   for (int i = 0; s[i] != '\0'; i++) {
     hash1[s[i] - 'a']++;
-    hash1[t[i] - 'a']++;
+    hash1[t[i] - 'a']--;
   }
   for (int i = 0; i < alphabet; i++) {
     if (hash1[i] != hash2[i]) {
@@ -22,10 +22,10 @@ bool anagram(char *t, char *s) {
   return true;
 }
 int main() {
-  char *s;
-  scanf("%s", s);
-  char *t;
-  scanf("%s", t);
+  char s[1000];
+  fgets(s, 1000, stdin);
+  char t[1000];
+  fgets(t, 1000, stdin);
   int res = anagram(s, t);
   printf("%d", res);
 }
