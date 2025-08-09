@@ -21,6 +21,7 @@ bool anagram(char *t, char *s) {
   }
   return true;
 }
+
 int main() {
   char s[1000];
   fgets(s, 1000, stdin);
