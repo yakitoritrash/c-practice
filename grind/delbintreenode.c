@@ -48,9 +48,9 @@ bool find(int needle, node_t *root) {
     return true;
   }
   if (needle < root->val) {
-    find(needle, root->left);
+    return find(needle, root->left);
   }
-  find(needle, root->right);
+  return find(needle, root->right);
   return false;
 }
 
@@ -100,8 +100,14 @@ int main() {
   }
   int x;
   scanf("%d", &x);
+  int y;
+  scanf("%d", &y);
   inordertraverse(root);
   delete_node(root, x);
   printf("\n");
   inordertraverse(root);
+  printf("\n");
+  int res = find(y, root);
+  printf("%d", res);
+
 }
