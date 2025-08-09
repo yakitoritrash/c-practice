@@ -22,5 +22,10 @@ bool anagram(char *t, char *s) {
   return true;
 }
 int main() {
-
+  char *s;
+  scanf("%s", s);
+  char *t;
+  scanf("%s", t);
+  int res = anagram(s, t);
+  printf("%d", res);
 }
