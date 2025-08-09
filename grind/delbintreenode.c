@@ -96,7 +96,12 @@ int main() {
   for (int i = 0; i < n; i++) {
     int x;
     scanf("%d", &x);
-    insert_node(x, root);
+    root = insert_node(x, root);
   }
+  int x;
+  scanf("%d", &x);
+  inordertraverse(root);
+  delete_node(root, x);
+  printf("\n");
   inordertraverse(root);
 }
