@@ -87,6 +87,16 @@ void inorder(node_t *root) {
   printf("%d ", root->val);
   inorder(root->right);
 }
+
+void invert(node_t *root) {
+  if (root == NULL) {
+    return;
+  }
+  node_t *tmp = root->right;
+  root->right = root->left;
+  root->left = tmp;
+}
+
 int main() {
   int n;
   scanf("%d", &n);
@@ -107,5 +117,7 @@ int main() {
   printf("\n");
   int res = find(root, y);
   printf("%d", res);
-
+  invert(root);
+  printf("\n");
+  inorder(root);
 }
