@@ -95,6 +95,8 @@ void invert(node_t *root) {
   node_t *tmp = root->right;
   root->right = root->left;
   root->left = tmp;
+  invert(root->left);
+  invert(root->right);
 }
 
 int main() {
