@@ -78,8 +78,34 @@ node_t *delete_node(node_t *root, int needle) {
   }
   return root;
 }
+
+void inorder(node_t *root) {
+  if (root == NULL) {
+    return;
+  }
+  inorder(root->left);
+  printf("%d ", root->val);
+  inorder(root->right);
+}
 int main() {
   int n;
   scanf("%d", &n);
-  :
+  node_t *root = NULL;
+  for (int i = 0; i < n; i++) {
+    int x;
+    scanf("%d", &x);
+    root = insert_node(x, root);
+  }
+  int x;
+  scanf("%d", &x);
+  int y;
+  scanf("%d", &y);
+  inorder(root);
+  delete_node(root, x);
+  printf("\n");
+  inorder(root);
+  printf("\n");
+  int res = find(root, y);
+  printf("%d", res);
+
 }
