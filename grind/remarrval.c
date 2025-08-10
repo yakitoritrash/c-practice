@@ -2,8 +2,8 @@
 
 void remarr(int arr[], int *n, int needle) {
   int i = 0;
-  while (i != needle) i++;
-  for (int j = i; j < *n; j++) {
+  while (arr[i] != needle) i++;
+  for (int j = i; j < *n - 1; j++) {
     arr[j] = arr[j + 1];
   }
   (*n)--;
@@ -19,11 +19,11 @@ int main() {
   int x;
   scanf("%d", &x);
   for (int i = 0; i < n; i++) {
-    printf("%d", arr[i]);
+    printf("%d ", arr[i]);
   }
   printf("\n");
   remarr(arr, &n, x);
-  for (int i = 0; i < n - 1; i++) {
-    printf("%d", arr[i]);
+  for (int i = 0; i < n; i++) {
+    printf("%d ", arr[i]);
   }
 }
