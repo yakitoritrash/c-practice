@@ -45,5 +45,13 @@ void buildheap(heap_t *heap) {
 }
 
 void increasekey(heap_t *heap, int index, int newval) {
-
+  if (index >= heap->size || heap->arr[index] >= newval) {
+    printf("Invalid index pr new value is not greater.\n");
+    return;
+  }
+  heap->arr[index] = newval;
+  while (index != 0 && heap->arr[(index - 1) / 2] < heap->arr[index]) {
+    swap(&heap->arr[index], &heap->arr[(index - 1) / 2]);
+    index = (index - 1) / 2;
+  }
 }
