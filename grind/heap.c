@@ -55,3 +55,17 @@ void increasekey(heap_t *heap, int index, int newval) {
     index = (index - 1) / 2;
   }
 }
+
+void insertheap(heap_t *heap, int val) {
+  if (heap->size == heap->capacity) {
+    printf("Heap overflow.\n");
+    return;
+  }
+  heap->size++;
+  int i = heap->size - 1;
+  heap->arr[i] = val;
+  while (i != 0 && heap->arr[(i - 1) / 2] < heap->arr[i]) {
+    swap(&heap->arr[i], &heap->arr[(i - 1) / 2]);
+    i = (i - 1) / 2;
+  }
+}
