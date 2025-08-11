@@ -7,6 +7,8 @@ typedef struct heap_t {
   int capacity;
 } heap_t;
 
+#define MAX_INPUT 1000000000;
+
 heap_t *create_heap(int capacity) {
   heap_t* heap = malloc(sizeof(heap_t));
   heap->size = 0;
@@ -67,5 +69,11 @@ void insertheap(heap_t *heap, int val) {
   while (i != 0 && heap->arr[(i - 1) / 2] < heap->arr[i]) {
     swap(&heap->arr[i], &heap->arr[(i - 1) / 2]);
     i = (i - 1) / 2;
+  }
+}
+
+int extractmax(heap_t *heap) {
+  if (heap->size <= 0) {
+    return ;
   }
 }
