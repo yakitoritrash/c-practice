@@ -16,5 +16,23 @@ heap_t *create_heap(int capacity) {
 }
 
 void swap(int *a, int *b) {
+  int tmp = *a;
+  *a = *b;
+  *b = tmp;
+}
 
+void heapify(heap_t *heap, int i) {
+  int largest = i;
+  int left = 2 * i + 1;
+  int right = 2 * i + 2;
+  if (left < heap->size && heap->arr[left] > heap->arr[largest]) {
+    largest = left;
+  }
+  if (right < heap->size && heap->arr[right] > heap->arr[largest]) {
+    largest = right;
+  }
+  if (largest != i) {
+    swap(&heap->arr[i], &heap->arr[largest]);
+    heapify(heap, largest);
+  }
 }
