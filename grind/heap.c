@@ -36,3 +36,14 @@ void heapify(heap_t *heap, int i) {
     heapify(heap, largest);
   }
 }
+
+void buildheap(heap_t *heap) {
+  int n = heap->size;
+  for (int i = (n - 1) / 2; i >= 0; i--) {
+    heapify(heap, i);
+  }
+}
+
+void increasekey(heap_t *heap, int index, int newval) {
+
+}
