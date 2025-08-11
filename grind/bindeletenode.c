@@ -80,6 +80,9 @@ node_t *delete_node(int needle, node_t *root) {
 }
 
 void inorder(node_t *root) {
+  if (root == NULL) {
+    return;
+  }
   inorder(root->left);
   printf("%d ", root->val);
   inorder(root->right);
