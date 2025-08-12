@@ -73,6 +73,43 @@ void insertheap(heap_t *heap, int val) {
 
 int extractmax(heap_t *heap) {
   if (heap->size <= 0) {
-    return ;
+    return 1;
   }
+  if (heap->size == 1) {
+    heap->size--;
+    return heap->arr[0];
+  }
+  int root = heap->arr[0];
+  heap->arr[0] = heap->arr[heap->size - 1];
+  heap->size--;
+  heapify(heap, 0);
+  return root;
+}
+
+void printheap(heap_t *heap) {
+  for (int i = 0; i < heap->size; ++i) {
+    printf("%d ", heap->arr[i]);
+  }
+  printf("\n");
+}
+
+void deletekey(heap_t *heap, int index) {
+  if (index >= heap->size) {
+    printf("Invalid index\n");
+    return;
+  }
+
+  if (index == heap->size - 1) {
+    heap->size--;
+    return;
+  }
+
+  heap->arr[index] = heap->arr[heap->size -1];
+  heap->size--;
+  heapify(heap, index);
+}
+
+int main() {
+  heap_t *heap = create_heap(10);
+  insertheap(heap, 3);
 }
