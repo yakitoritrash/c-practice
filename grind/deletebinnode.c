@@ -53,12 +53,12 @@ node_t *findmin(node_t *root) {
 
 node_t *delete_node(int x, node_t *root) {
   if (root == NULL) {
-    return root;
+    return NULL;
   }
   if (root->val < x) {
-    delete_node(x, root->right);
+    root->right = delete_node(x, root->right);
   } else if (root->val > x) {
-    delete_node(x, root->left);
+    root->left = delete_node(x, root->left);
   } else {
     if (root->left == NULL) {
       node_t *tmp = root->right;
@@ -85,7 +85,7 @@ void inorder(node_t *root) {
   }
   inorder(root->left);
   printf("%d ", root->val);
-  inorder(root->left);
+  inorder(root->right);
 }
 
 int main() {
