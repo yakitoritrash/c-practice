@@ -44,4 +44,68 @@ bool find(node_t *root, int needle) {
   return find(root->left, needle);
 }
 
+node_t *findmin(node_t *root) {
+  while (root && root->left != NULL) {
+    root = root->left;
+  }
+  return root;
+}
 
+node_t *delete_node(int x, node_t *root) {
+  if (root == NULL) {
+    return root;
+  }
+  if (root->val < x) {
+    delete_node(x, root->right);
+  } else if (root->val > x) {
+    delete_node(x, root->left);
+  } else {
+    if (root->left == NULL) {
+      node_t *tmp = root->right;
+      free(root);
+      return tmp;
+    } else if (root->right == NULL) {
+      node_t *tmp = root->left;
+      free(root);
+      return tmp;
+    } else if (root->left == NULL && root->right == NULL) {
+      free(root);
+      return NULL;
+    }
+    node_t *min = findmin(root->right);
+    root->val = min->val;
+    root->right = delete_node(min->val, root->right);
+  }
+  return root;
+}
+
+void inorder(node_t *root) {
+  if (root == NULL) {
+    return;
+  }
+  inorder(root->left);
+  printf("%d ", root->val);
+  inorder(root->left);
+}
+
+int main() {
+  int n;
+  scanf("%d", &n);
+  node_t *root = NULL;
+  for (int i = 0; i < n; i++) {
+    int x;
+    scanf("%d", &x);
+    root = insert_node(x, root);
+  }
+  int x;
+  scanf("%d", &x);
+  int y;
+  scanf("%d", &y);
+  inorder(root);
+  printf("\n");
+  delete_node(x, root);
+  inorder(root);
+  printf("\n");
+  int res = find(root, y);
+  printf("%d", res);
+}
