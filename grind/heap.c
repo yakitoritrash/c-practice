@@ -7,7 +7,6 @@ typedef struct heap_t {
   int capacity;
 } heap_t;
 
-#define MAX_INPUT 1000000000;
 
 heap_t *create_heap(int capacity) {
   heap_t* heap = malloc(sizeof(heap_t));
