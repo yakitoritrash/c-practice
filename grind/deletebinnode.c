@@ -38,5 +38,10 @@ bool find(node_t *root, int needle) {
   if (root->val == needle) {
     return true;
   }
-
+  if (root->val < needle) {
+    return find(root->right, needle);
+  }
+  return find(root->left, needle);
 }
+
+
