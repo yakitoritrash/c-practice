@@ -26,7 +26,8 @@ int binarystr(char *str) {
 }
 
 int main() {
-  char expr[] = "1A0C1B0";
+  char expr[100];
+  scanf("%99s", expr);
   int res = binarystr(expr);
   if (res != -1) {
     printf("result: %d\n", res);
