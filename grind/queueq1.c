@@ -44,3 +44,26 @@ void printlist(node_t *head) {
     tmp = tmp->next;
   }
 }
+
+int main() {
+  node_t *head = NULL;
+  while (1) {
+    int n;
+    scanf("%d", &n);
+    if (n == 1) {
+      int x;
+      scanf("%d", &x);
+      head = insert_node(x, head);
+    } else if (n == 2) {
+      head = dequeue(head);
+      printf("\n");
+    } else if (n == 3) {
+      printlist(head);
+      printf("\n");
+    } else if (n == 4) {
+      break;
+    } else {
+      printf("Invalid\n");
+    }
+  }
+}
