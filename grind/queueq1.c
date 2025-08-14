@@ -28,12 +28,18 @@ node_t *insert_node(int val, node_t *head) {
 
 node_t *dequeue(node_t *head) {
   node_t *tmp = head;
-  while (tmp != NULL) {
+  if (head == NULL) {
+    printf("Cannot delete\n");
+    return head;
+  }
+  node_t *prev = NULL;
+  while (tmp->next->next != NULL) {
     tmp = tmp->next;
   }
-  node_t *to_delete = tmp;
-  printf("Node deleting is: %d", tmp->val);
+  node_t *to_delete = tmp->next;
+  printf("Node deleting is: %d", tmp->next->val);
   free(to_delete);
+  tmp->next = NULL;
   return head;
 }
 
