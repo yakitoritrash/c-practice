@@ -30,4 +30,13 @@ node_t *insert_node(int val, node_t *root) {
   return root;
 }
 
-node_t *
+node_t *findmin(node_t *root) {
+  while (root && root->left != NULL) {
+    root = root->left;
+  }
+  return root;
+}
+
+node_t *delete_node(int del, node_t *root) {
+  
+}
