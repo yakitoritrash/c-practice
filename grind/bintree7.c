@@ -66,5 +66,14 @@ node_t *delete_node(int del, node_t *root) {
 }
 
 void inordertraversal(node_t *root) {
+  if (root == NULL) {
+    return;
+  }
+  inordertraversal(root->left);
+  printf("%d ", root->val);
+  inordertraversal(root->right);
+}
 
+int main() {
+  node_t *root = NULL;
 }
