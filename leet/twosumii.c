@@ -1,9 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define HASH_TABLE 100007
-int* two_sum_ii(int arr[], int k, int size) {
+#define TABLE_SIZE 100007
+typedef struct {
+  int key;
+  int val;
+  int used;
+} entry_t;
 
+int hash_func(int x) {
+  return ((x % TABLE_SIZE) + TABLE_SIZE) % TABLE_SIZE;
+}
+
+int* two_sum_ii(int arr[], int k, int size) {
+  entry_t* table = calloc(TABLE_SIZE, sizeof(entry_t));
 }
 
 int main() {
