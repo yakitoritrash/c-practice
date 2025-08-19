@@ -70,7 +70,7 @@ void inorder(node_t *root) {
     return;
   }
   inorder(root->left);
-  printf("%d", root->val);
+  printf("%d ", root->val);
   inorder(root->right);
 }
 
