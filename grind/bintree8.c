@@ -82,6 +82,10 @@ int main() {
     int x;
     scanf("%d", &x);
     root = insert_node(x, root);
+    inorder(root);
   }
-
+  int x;
+  scanf("%d", &x);
+  root = delete_node(root, x);
+  inorder(root);
 }
