@@ -64,3 +64,7 @@ node_t *delete_node(node_t *root, int x) {
   }
   return root;
 }
+
+int main() {
+
+}
