@@ -65,6 +65,23 @@ node_t *delete_node(node_t *root, int x) {
   return root;
 }
 
+void inorder(node_t *root) {
+  if (root == NULL) {
+    return;
+  }
+  inorder(root->left);
+  printf("%d", root->val);
+  inorder(root->right);
+}
+
 int main() {
+  node_t *root = NULL;
+  int n;
+  scanf("%d", &n);
+  for (int i = 0; i < n; i++) {
+    int x;
+    scanf("%d", &x);
+    root = insert_node(x, root);
+  }
 
 }
