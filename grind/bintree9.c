@@ -38,7 +38,33 @@ node_t *findmin(node_t *root) {
 }
 
 node_t *delete_node(node_t *root, int x) {
-t
+  if (root == NULL) {
+    return root;
+  }
+  if (x < root->val) {
+    root->left = delete_node(root->left, x);
+  } else if (x > root->val) {
+    root->right = delete_node(root->right, x);
+  } else {
+    if (root->left == NULL) {
+      node_t *tmp = root->right;
+      free(root);
+      return tmp;
+    } else if (root->right == NULL) {
+      node_t *tmp = root->left;
+      free(root);
+      return tmp;
+    } else if (root->left == NULL && root->right == NULL) {
+      free(root);
+      return NULL;
+    }
+    node_t *min = findmin(root->right);
+    root->val = min->val;
+    root->right = delete_node(root->right, min->val);
+  }
+  return root;
 }
 
+void inordertraverse(node_t *head) {
 
+}
