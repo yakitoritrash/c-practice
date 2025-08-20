@@ -74,6 +74,17 @@ void inordertraverse(node_t *root) {
   inordertraverse(root->right);
 }
 
+node_t *inverse(node_t *root) {
+  if (root == NULL) {
+    return NULL;
+  }
+  node_t *tmp = root->left;
+  root->left = root->right;
+  root->right = tmp;
+  inverse(root->left);
+  inverse(root->right);
+  return root;
+}
 int main() {
   node_t *root = NULL;
   int n;
@@ -87,5 +98,8 @@ int main() {
   int x;
   scanf("%d", &x);
   root = delete_node(root, x);
+  inordertraverse(root);
+  root = inverse(root);
+  printf("\n");
   inordertraverse(root);
 }
