@@ -65,6 +65,27 @@ node_t *delete_node(node_t *root, int x) {
   return root;
 }
 
-void inordertraverse(node_t *head) {
+void inordertraverse(node_t *root) {
+  if (root == NULL) {
+    return;
+  }
+  inordertraverse(root->left);
+  printf("%d ", root->val);
+  inordertraverse(root->right);
+}
 
+int main() {
+  node_t *root = NULL;
+  int n;
+  scanf("%d", &n);
+  for (int i = 0; i < n; i++) {
+    int x;
+    scanf("%d", &x);
+    root = insert_node(x, root);
+    inordertraverse(root);
+  }
+  int x;
+  scanf("%d", &x);
+  root = delete_node(root, x);
+  inordertraverse(root);
 }
