@@ -15,3 +15,15 @@ node_t *create_node(int val) {
   new_node->next = NULL;
   return new_node;
 }
+
+node_t *prepend(int val, node_t *head) {
+  node_t *new_node = create_node(val);
+  if (head == NULL) {
+    return new_node;
+  }
+  new_node->next = head;
+  head = new_node;
+  return head;
+}
+
+
