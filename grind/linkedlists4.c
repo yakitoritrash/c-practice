@@ -26,4 +26,8 @@ node_t *prepend(int val, node_t *head) {
   return head;
 }
 
+node_t *append(int val, node_t *head) {
+  node_t *new_node = create_node(val);
 
+  return head;
+}
