@@ -35,7 +35,7 @@ node_t *findmin(node_t *root) {
     root = root->left;
   }
   return root;
-}
+};
 
 node_t *delete_node(int x, node_t *root) {
   if (root == NULL) {
@@ -58,5 +58,6 @@ node_t *delete_node(int x, node_t *root) {
       free(root);
       return NULL;
     }
+    node_t *min = findmin(root->right);
   }
 }
