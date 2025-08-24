@@ -54,7 +54,9 @@ node_t *delete_node(int x, node_t *root) {
       node_t *tmp = root->left;
       free(root);
       return tmp;
-    } else if (root->right == NULL && root->left == NULL) {}
-
+    } else if (root->right == NULL && root->left == NULL) {
+      free(root);
+      return NULL;
+    }
   }
 }
