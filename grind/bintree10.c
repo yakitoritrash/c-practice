@@ -59,5 +59,40 @@ node_t *delete_node(int x, node_t *root) {
       return NULL;
     }
     node_t *min = findmin(root->right);
+    root->val = min->val;
+    root->right = delete_node(min->val, root->right);
+  }
+  return root;
+}
+
+void inordertraverse(node_t *root) {
+  if (root == NULL) {
+    return;
+  }
+  inordertraverse(root->left);
+  printf("%d", root->val);
+  inordertraverse(root->right);
+}
+
+int main() {
+  node_t *root = NULL;
+  while (1) {
+    int x;
+    scanf("%d", &x);
+    if (x == 1) {
+      int y;
+      scanf("%d", &y);
+      insert_node(y, root);
+      printf("Node added.\n");
+    } else if (x == 2) {
+      int y;
+      scanf("%d", &y);
+      delete_node(y, root);
+    } else if (x == 3) {
+      inordertraverse(root);
+    } else if (x == 4) {
+      printf("exiting.\n");
+      break;
+    }
   }
 }
