@@ -70,7 +70,7 @@ void inordertraverse(node_t *root) {
     return;
   }
   inordertraverse(root->left);
-  printf("%d", root->val);
+  printf("%d ", root->val);
   inordertraverse(root->right);
 }
 
@@ -90,6 +90,7 @@ int main() {
       delete_node(y, root);
     } else if (x == 3) {
       inordertraverse(root);
+      printf("\n");
     } else if (x == 4) {
       printf("exiting.\n");
       break;
