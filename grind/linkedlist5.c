@@ -47,6 +47,8 @@ node_t *append(int val, node_t *head) {
 
 node_t *delete_node(int val, node_t *head) {
   if (val == head->val) {
+    node_t *to_delete = head;
+
   }
 }
 
