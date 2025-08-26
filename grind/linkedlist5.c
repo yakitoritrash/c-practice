@@ -42,6 +42,11 @@ node_t *append(int val, node_t *head) {
   if (tmp->next->next != NULL) {
     new_node->prev = tmp->next->next;
   }
+  return head;
+}
+
+node_t *delete_node(int val, node_t *head) {
+
 }
 
 
