@@ -31,5 +31,15 @@ node_t *prepend(int val, node_t *head) {
 
 node_t *append(int val, node_t *head) {
   node_t *new_node = create_node(val);
-
+  if (head == NULL) {
+    return new_node;
+  }
+  node_t *tmp = head;
+  while (tmp->next != NULL) {
+    tmp = tmp->next;
+  }
+  tmp->next->next = new_node;
+  if (tmp->next->next != NULL) {
+    new_node->prev = tmp->next->next;
+  }
 }
