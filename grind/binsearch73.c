@@ -18,5 +18,12 @@ int binsearch(int arr[], int size, int n) {
 }
 
 int main() {
-  
+  int arr[] = {3, 4, 5, 6, 7, 8};
+  int size = sizeof(arr) / sizeof(arr[0]);
+  int n = 6;
+  int result = binsearch(arr, size, n);
+  for (int i = 0; i < n; i++) {
+    printf("%d ", arr[i]);
+  }
+  printf("%d", result);
 }
