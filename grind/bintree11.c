@@ -77,5 +77,9 @@ node_t *delete(node_t *root, int x) {
 
 int main() {
   node_t *root = NULL;
+  int n;
+  scanf("%d", &n);
+  for (int i = 0; i < n; i++) {
 
+  }
 }
