@@ -94,4 +94,12 @@ int main() {
     root = insert_node(x, root);
     inorder(root);
   }
+  printf("\n");
+  int x;
+  scanf("%d", &x);
+  root = delete(root, x);
+  inorder(root);
+  printf("\n");
+  invert(root);
+  inorder(root);
 }
