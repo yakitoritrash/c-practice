@@ -30,4 +30,6 @@ node_t *insert_node(int val, node_t *root) {
   return root;
 }
 
+node_t *invert(node_t *root) {
 
+}
