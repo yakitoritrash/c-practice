@@ -41,3 +41,14 @@ node_t *invert(node_t *root) {
   invert(root->right);
   return root;
 }
+
+node_t *findmin(node_t *root) {
+  while (root && root->left != NULL) {
+    root = root->left;
+  }
+  return root;
+}
+
+node_t *delete(node_t *root, int x) {
+
+}
