@@ -6,3 +6,14 @@ typedef struct node_t {
   struct node_t *left;
   struct node_t *right;
 } node_t;
+
+node_t *create_node(int val) {
+  node_t *new_node = malloc(sizeof(node_t));
+  if (!new_node) {
+    return NULL;
+  }
+  new_node->val = val;
+  new_node->left = NULL;
+  new_node->right = NULL;
+  return new_node;
+}
