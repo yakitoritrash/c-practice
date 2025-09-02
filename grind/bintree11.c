@@ -31,5 +31,13 @@ node_t *insert_node(int val, node_t *root) {
 }
 
 node_t *invert(node_t *root) {
-
+  if (root == NULL) {
+    return NULL;
+  }
+  node_t *tmp = root->left;
+  root->left = root->right;
+  root->right = tmp;
+  invert(root->left);
+  invert(root->right);
+  return root;
 }
