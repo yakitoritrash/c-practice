@@ -50,5 +50,32 @@ node_t *findmin(node_t *root) {
 }
 
 node_t *delete(node_t *root, int x) {
+  if (x < root->val) {
+    delete(root->left, x);
+  } else if (x > root->val) {
+    delete(root->right, x);
+  } else {
+    if (root->left == NULL) {
+      node_t *tmp = root->right;
+      free(root);
+      return tmp;
+    } else if (root->right == NULL) {
+      node_t *tmp = root->left;
+      free(root);
+      return tmp;
+    } else if (root->right == NULL && root->left == NULL) {
+      free(root);
+      return NULL;
+    } else {
+      node_t *min = findmin(root->right);
+      root->val = min->val;
+      root->right = delete(root->right, min->val);
+    }
+  }
+  return root;
+}
+
+int main() {
+  node_t *root = NULL;
 
 }
