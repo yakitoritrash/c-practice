@@ -23,3 +23,15 @@ node_t *create_node(char *val) {
   new_node->right = NULL;
   return new_node;
 }
+
+node_t *insert_node(char *val, node_t *root) {
+  if (root == NULL) {
+    return create_node(val);
+  }
+  if (strcmp(val, root->val) <= 0) {
+    root->left = insert_node(val, root->left);
+  } else {
+    root->right = insert_node(val, root->right);
+  }
+  return root;
+}
