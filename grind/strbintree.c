@@ -35,3 +35,9 @@ node_t *insert_node(char *val, node_t *root) {
   }
   return root;
 }
+
+node_t *findmin(node_t *root) {
+  while (root && root->left != NULL) {
+    root = root->left;
+  }
+}
