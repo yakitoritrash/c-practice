@@ -39,11 +39,11 @@ node_t *find_min(node_t *root) {
 
 node_t *delete_node(node_t *root, int x) {
   if (root == NULL) {
-    return NULL;
+    return root;
   }
   if (root->val < x) {
     root->right = delete_node(root->right, x);
-  } else if (root->val >= x) {
+  } else if (root->val > x) {
     root->left = delete_node(root->left, x);
   } else {
     if (root->left == NULL) {
@@ -57,11 +57,10 @@ node_t *delete_node(node_t *root, int x) {
     } else if (root->right == NULL && root->left == NULL) {
       free(root);
       return NULL;
-    } else {
-      node_t *min = find_min(root->right);
-      root->val = min->val;
-      root->right = delete_node(root->right, min->val);
     }
+    node_t *min = find_min(root->right);
+    root->val = min->val;
+    root->right = delete_node(root->right, min->val);
   }
   return root;
 }
@@ -95,6 +94,15 @@ int main() {
     scanf("%d", &x);
     root = insert_node(x, root);
   }
+  inordertraverse(root);
+  invert_tree(root);
+  printf("\n");
+  inordertraverse(root);
+  printf("\n");
+  int y;
+  scanf("%d", &y);
+  root = delete_node(root, y);
+  printf("\n");
   inordertraverse(root);
   invert_tree(root);
   printf("\n");
