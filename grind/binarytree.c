@@ -38,5 +38,50 @@ node_t *find_min(node_t *root) {
 }
 
 node_t *delete_node(node_t *root, int x) {
+  if (root == NULL) {
+    return NULL;
+  }
+  if (root->val < x) {
+    root->right = delete_node(root->right, x);
+  } else if (root->val >= x) {
+    root->left = delete_node(root->left, x);
+  } else {
+    if (root->left == NULL) {
+      node_t *tmp = root->right;
+      free(root);
+      return tmp;
+    } else if (root->right == NULL) {
+      node_t *tmp = root->left;
+      free(root);
+      return tmp;
+    } else if (root->right == NULL && root->left == NULL) {
+      free(root);
+      return NULL;
+    } else {
+      node_t *min = find_min(root->right);
+      root->val = min->val;
+      root->right = delete_node(root->right, min->val);
+    }
+  }
+  return root;
+}
 
+void inordertraverse(node_t *root) {
+  if (root == NULL) {
+    return;
+  }
+  inordertraverse(root->left);
+  printf("%d ", root->val);
+  inordertraverse(root->right);
+}
+int main() {
+  node_t *root = NULL;
+  int n;
+  scanf("%d", &n);
+  for (int i = 0; i < n; i++) {
+    int x;
+    scanf("%d", &x);
+    root = insert_node(x, root);
+  }
+  inordertraverse(root);
 }
