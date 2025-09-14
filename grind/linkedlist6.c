@@ -30,6 +30,19 @@ node_t *append(int val, node_t *head) {
   tmp->next = new_node;
   new_node->prev = tmp;
   return head;
+  free(tmp);
+}
+
+node_t *prepend(int val, node_t *head) {
+  node_t *new_node = create_node(val);
+  if (head == NULL) {
+    head = new_node;
+    return new_node;
+  }
+  new_node->next = head;
+  head->prev = new_node;
+  head = new_node;
+  return head;
 }
 
 void printlist(node_t *head) {
@@ -40,10 +53,12 @@ void printlist(node_t *head) {
   }
   printf("NULL");
 }
+
 int main() {
   node_t *head = NULL;
   head = append(5, head);
   head = append(1, head);
+  head = prepend(2, head);
   printlist(head);
 }
 
