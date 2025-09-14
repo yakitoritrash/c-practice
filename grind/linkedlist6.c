@@ -90,4 +90,3 @@ int main() {
   head = delete_node_by_val(9, head);
   printlist(head);
 }
-
