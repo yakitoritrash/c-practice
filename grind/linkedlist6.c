@@ -54,11 +54,40 @@ void printlist(node_t *head) {
   printf("NULL");
 }
 
+node_t *delete_node_by_val(int val, node_t *head) {
+  if (head == NULL) {
+    return NULL;
+  }
+  if (head->val == val) {
+    node_t *to_delete = head;
+    head = to_delete->next;
+    free(to_delete);
+    return head;
+  }
+  node_t *tmp = head;
+  while (tmp->next != NULL && tmp->next->val != val) {
+    tmp = tmp->next;
+  }
+  if (tmp == NULL || tmp->next == NULL) {
+    printf("No value found.\n");
+    return head;
+  }
+  node_t *to_delete = tmp->next;
+  tmp->next = to_delete->next;
+  if (tmp) {
+    to_delete->next->prev = tmp;
+  }
+  return head;
+}
+
 int main() {
   node_t *head = NULL;
   head = append(5, head);
   head = append(1, head);
   head = prepend(2, head);
+  printlist(head);
+  printf("\n");
+  head = delete_node_by_val(9, head);
   printlist(head);
 }
 
