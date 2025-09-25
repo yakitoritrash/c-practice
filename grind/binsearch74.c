@@ -18,6 +18,10 @@ int binsearch(int arr[], int size, int needle) {
 }
 
 int main() {
-
+  int arr[] = {4, 5, 6, 7, 8, 9};
+  int size = sizeof(arr) / sizeof(arr[0]);
+  int needle = 4;
+  int res = binsearch(arr, size, needle);
+  printf("%d", res);
 }
 
