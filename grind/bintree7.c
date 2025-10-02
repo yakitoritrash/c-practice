@@ -83,4 +83,5 @@ int main() {
     scanf("%d", &x);
     root = insert_node(x, root);
   }
+  inordertraversal(root);
 }
