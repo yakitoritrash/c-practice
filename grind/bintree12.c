@@ -25,7 +25,7 @@ node_t *append(node_t *root, int val) {
   }
   if (root->val < val) {
     root = append(root->right, val);
-  } else if (root->val > val) {
+  } else if (root->val >= val) {
     root = append(root->left, val);
   }
   return root;
@@ -40,8 +40,11 @@ void inorder(node_t *root) {
   inorder(root->right);
 }
 
-
 int main() {
   node_t *root = NULL;
-
+  root = append(root, 10);
+  root = append(root, 20);
+  root = append(root, 30);
+  root = append(root, 40);
+  inorder(root);
 }
