@@ -32,9 +32,12 @@ node_t *append(node_t *root, int val) {
 }
 
 void inorder(node_t *root) {
-  root = root->left;
+  if (root == NULL) {
+    return;
+  }
+  inorder(root->left);
   printf("%d ", root->val);
-  root = root->left;
+  inorder(root->right);
 }
 
 
