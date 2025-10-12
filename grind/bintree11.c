@@ -95,6 +95,7 @@ int main() {
     scanf("%d", &x);
     root = insert_node(x, root);
     inorder(root);
+    printf("\n");
   }
   printf("\n");
   int x;

@@ -52,6 +52,41 @@ node_t *invert(node_t *root) {
   return root;
 }
 
+node_t *findmin(node_t *root) {
+  while (root && root->left != NULL) {
+    root = root->left;
+  }
+  return root;
+}
+
+node_t *delete(node_t *root, int x) {
+  if (root == NULL) {
+    return root;
+  }
+  if (x < root->val) {
+    root->left = delete(root->left, x);
+  } else if (x > root->val) {
+    root->right = delete(root->right, x);
+  } else {
+    if (root->left == NULL) {
+      node_t *tmp = root->right;
+      free(root);
+      return tmp;
+    } else if (root->right == NULL) {
+      node_t *tmp = root->left;
+      free(root);
+      return tmp;
+    } else if (root->left == NULL && root->right == NULL) {
+      free(root);
+      return NULL;
+    }
+    node_t *min = findmin(root->right);
+    root->val = min->val;
+    root->right = delete(root->right, min->val);
+  }
+  return root;
+}
+
 int main() {
   node_t *root = NULL;
   int n;
@@ -62,4 +97,13 @@ int main() {
     root = append(root, x);
   }
   inorder(root);
+  printf("\n");
+  int y;
+  scanf("%d", &y);
+  delete(root, y);
+  inorder(root);
+  printf("\n");
+  root = invert(root);
+  inorder(root);
+  printf("\n");
 }
