@@ -20,13 +20,13 @@ node_t* create_node(int val) {
 }
 
 node_t *append(node_t *root, int val) {
-  if (!root) {
+  if (root == NULL) {
     return create_node(val);
   }
   if (root->val < val) {
-    root = append(root->right, val);
+    root->right = append(root->right, val);
   } else if (root->val >= val) {
-    root = append(root->left, val);
+    root->left = append(root->left, val);
   }
   return root;
 }
