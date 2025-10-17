@@ -79,7 +79,11 @@ node_t *inverse(node_t *root) {
   if (root == NULL) {
     return NULL;
   }
-  
+  node_t *tmp = root->right;
+  root->right = root->left;
+  root->left = tmp;
+  inverse(root->left);
+  inverse(root->right);
   return root;
 }
 
@@ -97,5 +101,9 @@ int main() {
   int x;
   scanf("%d", &x);
   root = deletenode(x, root);
+  inoder(root);
+  inverse(root);
+  printf(
+    "\n");
   inoder(root);
 }
