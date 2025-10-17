@@ -9,6 +9,9 @@ typedef struct node_t {
 
 node_t* create_node(int val) {
   node_t *new_node = NULL;
-  if (!new_node)
+  if (!new_node) {
+    printf("");
+    return NULL;
+  }
   return new_node;
 }
