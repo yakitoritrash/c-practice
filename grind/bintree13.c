@@ -20,6 +20,17 @@ node_t* create_node(int val) {
 }
 
 node_t* insert_node(int val, node_t *root) {
-
+  if (root == NULL) {
+    return create_node(val);
+  }
+  if (root->val <= val) {
+    root->left = insert_node(val, root->left);
+  } else {
+    root->right = insert_node(val, root->right);
+  }
   return root;
+}
+
+void inoder(node_t *root) {
+
 }
