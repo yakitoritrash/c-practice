@@ -8,9 +8,9 @@ typedef struct node_t {
 } node_t;
 
 node_t* create_node(int val) {
-  node_t *new_node = NULL;
+  node_t *new_node = malloc(sizeof(node_t));
   if (!new_node) {
-    printf("Memory allocation failed");
+    printf("Memory allocation failed.\n");
     return NULL;
   }
   new_node->val = val;
@@ -24,13 +24,32 @@ node_t* insert_node(int val, node_t *root) {
     return create_node(val);
   }
   if (root->val <= val) {
-    root->left = insert_node(val, root->left);
-  } else {
     root->right = insert_node(val, root->right);
+  } else {
+    root->left = insert_node(val, root->left);
   }
   return root;
 }
 
 void inoder(node_t *root) {
+  if (root == NULL) {
+    return;
+  }
+  inoder(root->left);
+  printf("%d ", root->val);
+  inoder(root->right);
+}
 
+
+
+int main() {
+  node_t *root = NULL;
+  int n;
+  scanf("%d", &n);
+  for (int i = 0; i < n; i++) {
+    int x;
+    scanf("%d", &x);
+    root = insert_node(x, root);
+  }
+  inoder(root);
 }
