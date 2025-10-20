@@ -40,6 +40,20 @@ void inorder(node_t *root) {
   inorder(root->right);
 }
 
+node_t *inverse(node_t *root) {
+  if (root == NULL) {
+    return NULL;
+  }
+  node_t *tmp = root->left;
+  root->left = root->right;
+  root->right = tmp;
+  inverse(root->left);
+  inverse(root->right);
+  return root;
+}
+
+
+
 int main() {
   node_t *root = NULL;
   int n;
@@ -49,5 +63,8 @@ int main() {
     scanf("%d", &x);
     root = insert_node(x, root);
   }
+  inorder(root);
+  inverse(root);
+  printf("\n");
   inorder(root);
 }
