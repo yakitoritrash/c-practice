@@ -43,5 +43,5 @@ void inorder(node_t *root) {
 int main() {
   node_t *root = NULL;
   int n;
-  scanf("
+  scanf("%d", &n);
 }
