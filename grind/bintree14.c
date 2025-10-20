@@ -52,7 +52,9 @@ node_t *inverse(node_t *root) {
   return root;
 }
 
-
+node_t *findmin(node_t *root) {
+  while (root && root->left != NULL)
+}
 
 int main() {
   node_t *root = NULL;
