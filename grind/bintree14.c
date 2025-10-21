@@ -60,7 +60,10 @@ node_t *findmin(node_t *root) {
 }
 
 node_t *delete_node(int x, node_t *root) {
-
+  if (root == NULL) {
+    return root;
+  }
+  
   return root;
 }
 
