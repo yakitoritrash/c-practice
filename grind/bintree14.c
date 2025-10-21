@@ -53,8 +53,17 @@ node_t *inverse(node_t *root) {
 }
 
 node_t *findmin(node_t *root) {
-  while (root && root->left != NULL)
+  while (root && root->left != NULL) {
+    root = root->left;
+  }
+  return root;
 }
+
+node_t *delete_node(int x, node_t *root) {
+
+  return root;
+}
+
 
 int main() {
   node_t *root = NULL;
