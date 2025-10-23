@@ -66,6 +66,10 @@ node_t *delete_node(int x, node_t *root) {
   
   if (root->val < x) {
     root->right = delete_node(x, root->right);
+  } else if (root->val > x) {
+    root->left = delete_node(x, root->left);
+  } else {
+
   }
   
   return root;
