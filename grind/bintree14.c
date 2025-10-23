@@ -82,9 +82,9 @@ node_t *delete_node(int x, node_t *root) {
       return NULL;
     }
     node_t *min = findmin(root->right);
-
+    root->val = min->val;
+    root->right = delete_node(min->val, root->right);
   }
-  
   return root;
 }
 
@@ -101,5 +101,9 @@ int main() {
   inorder(root);
   inverse(root);
   printf("\n");
+  inorder(root);
+  int y;
+  scanf("%d", &y);
+  root = delete_node(y, root);
   inorder(root);
 }
