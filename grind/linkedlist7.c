@@ -17,6 +17,15 @@ node_t *create_node(int val) {
   return new_node;
 }
 
+node_t *append(int val, node_t *head) {
+  node_t *new_node = create_node(val);
+  if (head == NULL) {
+    head = new_node;
+    return head;
+  }
+  return head;
+}
+
 int main() {}
 
 :
