@@ -6,6 +6,17 @@ typedef struct node_t {
   struct node_t *next;
 } node_t;
 
+node_t *create_node(int val) {
+  node_t *new_node = malloc(sizeof(node_t));
+  if (!new_node) {
+    printf("Memory allocation failed.\n");
+    return NULL;
+  }
+  new_node->val = val;
+  new_node->next = NULL;
+  return new_node;
+}
+
 int main() {}
 
 :
