@@ -27,5 +27,3 @@ node_t *append(int val, node_t *head) {
 }
 
 int main() {}
-
-:
