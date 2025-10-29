@@ -23,7 +23,9 @@ node_t *append(int val, node_t *head) {
     head = new_node;
     return head;
   }
+  node_t *tmp = head;
   return head;
 }
+
 
 int main() {}
