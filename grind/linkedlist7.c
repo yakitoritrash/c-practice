@@ -24,8 +24,11 @@ node_t *append(int val, node_t *head) {
     return head;
   }
   node_t *tmp = head;
+  while (tmp->next != NULL) {
+    tmp = tmp->next;
+  }
+  tmp->next = new_node;
   return head;
 }
-
 
 int main() {}
