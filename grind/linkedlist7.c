@@ -31,4 +31,6 @@ node_t *append(int val, node_t *head) {
   return head;
 }
 
+node
+
 int main() {}
