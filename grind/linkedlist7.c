@@ -37,8 +37,7 @@ node_t *prepend(int val, node_t *head) {
     return new_node;
   }
   new_node->next = head;
-
-
+  head = new_node;
   return head;
 }
 
