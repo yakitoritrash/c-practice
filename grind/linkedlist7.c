@@ -40,6 +40,6 @@ node_t *prepend(int val, node_t *head) {
   head = new_node;
   return head;
 }
-node
+node_t
 
 int main() {}
