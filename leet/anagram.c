@@ -11,6 +11,7 @@ bool anagram(char *t, char *s) {
   int hash1[alphabet] = {0};
   int hash2[alphabet] = {0};
   for (int i = 0; s[i] != '\0'; i++) {
+    //l, i, s, t, e, n, \0
     hash1[s[i] - 'a']++;
     hash1[t[i] - 'a']--;
   }
