@@ -20,7 +20,7 @@ node_t *create_node(int val) {
 
 node_t *append(int val, node_t *head) {
   node_t *new_node = create_node(val);
-  i (head == NULL) {
+  if (head == NULL) {
     return new_node;
   }
   node_t *tmp = head;
