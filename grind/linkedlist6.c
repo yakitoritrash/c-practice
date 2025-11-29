@@ -8,7 +8,7 @@ typedef struct node_t {
 } node_t;
 
 node_t *create_node(int val) {
-  noe_t *new_node = malloc(sizeof(node_t));
+  node_t *new_node = malloc(sizeof(node_t));
   if (!new_node) {
     return NULL;
   }

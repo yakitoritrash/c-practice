@@ -44,7 +44,7 @@ node_t *findmin(node_t *root) {
   while (root && root->left != NULL) {
     root = root->left;
   }
-  return root;
+  return oot;
 }
 
 node_t *delete_node(node_t *root, int del) {
