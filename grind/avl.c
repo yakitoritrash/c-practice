@@ -15,4 +15,9 @@ int height(node_t *root) {
   return root->height;
 }
 
-
+int get_balance(node_t *root) {
+  if (root == NULL) {
+    return 0;
+  }
+  return height(root->left) - height(root->right);
+}
