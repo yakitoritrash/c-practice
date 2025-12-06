@@ -8,3 +8,11 @@ typedef struct node_t {
   int height;
 } node_t;
 
+int height(node_t *root) {
+  if (root == NULL) {
+    return 0;
+  }
+  return root->height;
+}
+
+
