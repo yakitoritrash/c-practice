@@ -20,6 +20,7 @@ typedef struct node_t {
 
 node_t *create_node(int val) {
   node_t *new_node = malloc(sizeof(node_t));
+  new_node->val = val;
   new_node->left = NULL;
   new_node->right = NULL;
   new_node->parent = NULL;
@@ -27,16 +28,15 @@ node_t *create_node(int val) {
   return new_node;
 }
 
-void left_rotate(node_t *root, node_t *to_rotate) {
+void left_rotate(node_t **root, node_t *to_rotate) {
   node_t* y = to_rotate->right;
+  to_rotate->right = y->left;
   if (y->left != NULL) {
     y->left->parent = to_rotate;
   }
-  if (to_rotate->parent != NULL) {
-    y->parent = to_rotate->parent;
-  }
+  y->parent = to_rotate->parent;
   if (to_rotate->parent == NULL) {
-    root = y;
+    *root = y;
   }
   else if (to_rotate->parent->left == to_rotate) {
     to_rotate->parent->left = y;
@@ -48,16 +48,15 @@ void left_rotate(node_t *root, node_t *to_rotate) {
   to_rotate->parent = y;
 }
 
-void right_rotate(node_t *root, node_t *to_rotate) {
-  node_t* y = to_rotate->right;
-  if (y->left != NULL) {
-    y->left->parent = to_rotate;
+void right_rotate(node_t **root, node_t *to_rotate) {
+  node_t* y = to_rotate->left;
+  to_rotate->left = y->right;
+  if (y->right != NULL) {
+    y->right->parent = to_rotate;
   }
-  if (to_rotate->parent != NULL) {
-    y->parent = to_rotate->parent;
-  }
+  y->parent = to_rotate->parent;
   if (to_rotate->parent == NULL) {
-    root = y;
+    *root = y;
   }
   else if (to_rotate->parent->left == to_rotate) {
     to_rotate->parent->left = y;
@@ -65,6 +64,8 @@ void right_rotate(node_t *root, node_t *to_rotate) {
   else if (to_rotate->parent->right == to_rotate) {
     to_rotate->parent->right = y;
   }
-  y->left = to_rotate;
+  y->right = to_rotate;
   to_rotate->parent = y;
 }
+
+
