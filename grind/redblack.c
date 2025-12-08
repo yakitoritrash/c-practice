@@ -29,5 +29,42 @@ node_t *create_node(int val) {
 
 void left_rotate(node_t *root, node_t *to_rotate) {
   node_t* y = to_rotate->right;
+  if (y->left != NULL) {
+    y->left->parent = to_rotate;
+  }
+  if (to_rotate->parent != NULL) {
+    y->parent = to_rotate->parent;
+  }
+  if (to_rotate->parent == NULL) {
+    root = y;
+  }
+  else if (to_rotate->parent->left == to_rotate) {
+    to_rotate->parent->left = y;
+  }
+  else if (to_rotate->parent->right == to_rotate) {
+    to_rotate->parent->right = y;
+  }
+  y->left = to_rotate;
+  to_rotate->parent = y;
+}
 
+void right_rotate(node_t *root, node_t *to_rotate) {
+  node_t* y = to_rotate->right;
+  if (y->left != NULL) {
+    y->left->parent = to_rotate;
+  }
+  if (to_rotate->parent != NULL) {
+    y->parent = to_rotate->parent;
+  }
+  if (to_rotate->parent == NULL) {
+    root = y;
+  }
+  else if (to_rotate->parent->left == to_rotate) {
+    to_rotate->parent->left = y;
+  }
+  else if (to_rotate->parent->right == to_rotate) {
+    to_rotate->parent->right = y;
+  }
+  y->left = to_rotate;
+  to_rotate->parent = y;
 }
