@@ -72,3 +72,14 @@ void insert(node_t **root, int val) {
   node_t *x = *root;
 
 }
+
+node_t *get_uncle(node_t *n) {
+  if (n->parent == NULL || n->parent->parent == NULL) {
+    return NULL;
+  }
+  if (n->parent == n->parent->parent->left) {
+    return n->parent->parent->right;
+  } else {
+    return n->parent->parent->left;
+  }
+}
