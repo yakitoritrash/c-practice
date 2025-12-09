@@ -68,4 +68,7 @@ void right_rotate(node_t **root, node_t *to_rotate) {
   to_rotate->parent = y;
 }
 
+void insert(node_t **root, int val) {
+  node_t *x = *root;
 
+}
