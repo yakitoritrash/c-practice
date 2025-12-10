@@ -68,11 +68,6 @@ void right_rotate(node_t **root, node_t *to_rotate) {
   to_rotate->parent = y;
 }
 
-void insert(node_t **root, int val) {
-  node_t *x = *root;
-
-}
-
 node_t *get_uncle(node_t *n) {
   if (n->parent == NULL || n->parent->parent == NULL) {
     return NULL;
@@ -83,3 +78,60 @@ node_t *get_uncle(node_t *n) {
     return n->parent->parent->left;
   }
 }
+
+void insert_fixup(node_t **root, node_t *z) {
+  while (z->parent != NULL && z->parent->color == RED) {
+    node_t *uncle = get_uncle(z);
+    node_t *grandparent = z->parent->parent;
+    if (uncle != NULL && uncle->color == RED) {
+      z->parent->color = BLACK;
+      uncle->color = BLACK;
+      grandparent->color = RED;
+      z = grandparent;
+    } else {
+      if (z->parent == grandparent->left) {
+        if (z == z->parent->right) {
+          z = z->parent;
+          left_rotate(root, z);
+        }
+        z->parent->color = BLACK;
+        grandparent->color = RED;
+        right_rotate(root, grandparent);
+      } else {
+        if (z == z->parent->left) {
+          z = z->parent;
+          right_rotate(root, z);
+        }
+        z->parent->color = BLACK;
+        grandparent->color = RED;
+        left_rotate(root, grandparent);
+      }
+    }
+  }
+  (*root)->color = BLACK;
+}
+
+void insert(node_t **root, int val) {
+  node_t *x = *root;
+  node_t *y = NULL;
+  while (x != NULL) {
+    y = x;
+    if (val < x->val) {
+      x = x->left;
+    } else {
+      x = x->right;
+    }
+  }
+  node_t *z = create_node(val);
+  z->parent = y;
+  if (y == NULL) {
+    *root = z;
+  } else if (val < y->val) {
+    y->left = z;
+  } else {
+    y->right = z;
+  }
+  insert_fixup(root, z);
+}
+
+
