@@ -134,4 +134,22 @@ void insert(node_t **root, int val) {
   insert_fixup(root, z);
 }
 
+void inordertraversal(node_t *root) {
+  if (root == NULL) {
+    return;
+  }
+  inordertraversal(root->left);
+  printf("%d (%s)-> ", root->val, root->color == RED ? "RED": "BLACK");
+  inordertraversal(root->right);
+}
 
+int main() {
+  node_t *root = NULL;
+  insert(&root, 5);
+  insert(&root, 2);
+  insert(&root, 10);
+  insert(&root, 9);
+  insert(&root, 4);
+  inordertraversal(root);
+  printf("\n");
+}
