@@ -114,9 +114,17 @@ node_t *delete_by_value(node_t *head, int value) {
   return head;
 }
 
-node_t reverse_list(node_t *head) {
+node_t *reverse_list(node_t *head) {
   node_t *tmp = head;
-
+  node_t *prev = NULL;
+  node_t *next_node = NULL;
+  while (tmp != NULL) {
+    next_node = tmp->next;
+    tmp->next = prev;
+    prev = tmp;
+    tmp = next_node;
+  }
+  return prev;
 }
 
 int main() {
