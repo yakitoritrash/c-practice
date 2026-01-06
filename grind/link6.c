@@ -115,6 +115,7 @@ node_t *delete_by_value(node_t *head, int value) {
 }
 
 node_t reverse_list(node_t *head) {
+  node_t *tmp = head;
 
 }
 
