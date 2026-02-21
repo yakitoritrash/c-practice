@@ -11,7 +11,7 @@ node_t *create_node(int value) {
   if (!new_node) {
     printf("Memory allocation failed.\n");
   }
-  new_node->data = value;
+  new_node->value = value;
   new_node->next = NULL;
   return new_node;
 }
@@ -51,9 +51,10 @@ node_t *insert_at_position(node_t *head, int value, int position) {
     if (tmp == NULL) {
       return head;
     }
-    tmp = tmo->next;
+    tmp = tmp->next;
   }
-  new_node->next = tmp->next ;
+  node_t *new_node = create_node(value);
+  new_node->next = tmp->next;
   tmp->next = new_node;
   return head;
 }
