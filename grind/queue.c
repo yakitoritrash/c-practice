@@ -42,7 +42,7 @@ void printlist(node_t *head) {
   while (tmp != NULL) {
     printf("%d ", tmp->val);
     tmp = tmp->next;
-  }
+  
 }
 
 int main() {
