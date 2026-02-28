@@ -16,6 +16,7 @@ int binsearch(int arr[], int size, int n) {
       lo = m + 1;
     }
   }
+  return 1;
 }
 
 int main() {
