@@ -8,6 +8,4 @@ typedef struct hashmapitem {
 
 typedef struct hashmap {
   int capacity;
-   
-
 } hashmap_t;
