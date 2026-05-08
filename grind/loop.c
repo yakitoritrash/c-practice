@@ -1,4 +1,4 @@
-#include <stdio.h>
+s#include <stdio.h>
 
 int main() {
   int counter = 0;
