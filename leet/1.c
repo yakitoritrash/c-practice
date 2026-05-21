@@ -22,7 +22,7 @@
 
 int* twoSum(int* nums, int numsSize, int target, int* returnSize) {
     int map_key[HASH_LENGTH] = {0};
-    int map_addr[HASH_LENGTH] = {0};
+    int map_addr[HASH_LENGTH] = {0
     bool map_used[HASH_LENGTH] = {false};
     int *retArray = (int*)malloc(2 * sizeof(int));
 
