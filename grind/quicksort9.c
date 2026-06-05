@@ -1,4 +1,4 @@
-include <stdio.h>
+#include <stdio.h>
 
 int partiton(int arr[], int lo, int hi) {
   int pivot = arr[hi];
