@@ -1,4 +1,5 @@
-#lude <stdio.h>
+:wqa
+lude <stdio.h>
 #include <stdlib.h>
 
 typedef struct hashmapitem {
