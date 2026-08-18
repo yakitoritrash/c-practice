@@ -1,4 +1,4 @@
-ude <stdio.h>
+#ude <stdio.h>
 #include <stdlib.h>
 
 typedef struct hashmapitem {
